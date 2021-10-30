@@ -7,7 +7,6 @@
     android:background="@color/background"
     android:layout_marginLeft="15dp"
     android:layout_marginRight="15dp"
-    android:layout_marginTop="15dp"
     android:layout_marginBottom="15dp"
     android:orientation="horizontal">
 
@@ -17,7 +16,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="9dp"
-        app:civ_border_width="2dp"
+        app:civ_border_width="1dp"
         app:civ_border_color="@color/white"/>
 
     <LinearLayout
@@ -58,7 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/primary_purple"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="4dp"
                 tools:text="Salsa"
                 />
             <LinearLayout
@@ -72,8 +71,9 @@
                     android:textColor="@color/primary_purple"
                     tools:text="Elektra"
                     android:layout_gravity="end"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="4dp"
                     />
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
