@@ -33,7 +33,6 @@
             android:textColor="@color/primary_color"
             android:textSize="18sp"
             android:textStyle="bold"
-
             />
 
         <TextView
