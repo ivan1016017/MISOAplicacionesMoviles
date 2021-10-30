@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="150dp"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
     android:orientation="horizontal">
 
     <ImageView
         android:id="@+id/ivCover"
-        android:layout_height="150dp"
         android:layout_width="150dp"
-        />
+        android:layout_height="150dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,6 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Buscando America"
+            android:textColor="@color/primary_color"
+
             />
 
         <TextView
@@ -31,18 +33,21 @@
             android:visibility="visible"
             android:ellipsize="end"
             android:maxLines="4"
+            android:textColor="@color/secondary_color"
             tools:text="Luego de definir los modelos de datos, es necesario conectar las fuentes de datos del componente encargado de la red con la interfaz gráfica. Para esto, desde Android Studio cree un directorio viewmodels en el código fuente de la aplicación, haga clic derecho en él y con la opción New > Kotlin File/Class agregue un archivo para cada una de las entidades para las cuales creó un modelo, es decir, un ViewModel para los álbumes, otro para los coleccionistas y otro para los comentarios.
 " />
         <TextView
             android:id="@+id/tvGenre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/secondary_color"
             tools:text="Salsa"
             />
         <TextView
             android:id="@+id/tvRecordLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/secondary_color"
             tools:text="Elektra"
             />
     </LinearLayout>
