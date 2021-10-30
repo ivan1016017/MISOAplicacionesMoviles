@@ -2,19 +2,28 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="96dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/background"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp"
     android:orientation="horizontal">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/ivCover"
-        android:layout_width="150dp"
-        android:layout_height="150dp" />
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="9dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/white"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
         android:orientation="vertical">
 
         <TextView
@@ -23,6 +32,8 @@
             android:layout_height="wrap_content"
             tools:text="Buscando America"
             android:textColor="@color/primary_color"
+            android:textSize="18sp"
+            android:textStyle="bold"
 
             />
 
@@ -32,25 +43,38 @@
             android:layout_height="wrap_content"
             android:visibility="visible"
             android:ellipsize="end"
-            android:maxLines="4"
+            android:maxLines="2"
+            android:layout_marginTop="6dp"
+
             android:textColor="@color/secondary_color"
             tools:text="Luego de definir los modelos de datos, es necesario conectar las fuentes de datos del componente encargado de la red con la interfaz gráfica. Para esto, desde Android Studio cree un directorio viewmodels en el código fuente de la aplicación, haga clic derecho en él y con la opción New > Kotlin File/Class agregue un archivo para cada una de las entidades para las cuales creó un modelo, es decir, un ViewModel para los álbumes, otro para los coleccionistas y otro para los comentarios.
 " />
-        <TextView
-            android:id="@+id/tvGenre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/secondary_color"
-            tools:text="Salsa"
-            />
-        <TextView
-            android:id="@+id/tvRecordLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/secondary_color"
-            tools:text="Elektra"
-            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tvGenre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/primary_purple"
+                android:layout_marginTop="6dp"
+                tools:text="Salsa"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvRecordLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/primary_purple"
+                    tools:text="Elektra"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="6dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
-
-
 </LinearLayout>
