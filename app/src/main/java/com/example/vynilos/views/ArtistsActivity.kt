@@ -32,7 +32,7 @@ class ArtistsActivity:AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        adapter = ArtistAdapter(artists)
+        adapter = ArtistAdapter()
         binding.rvArtists.layoutManager = LinearLayoutManager(this)
         binding.rvArtists.adapter = adapter
     }

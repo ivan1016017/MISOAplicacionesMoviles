@@ -12,5 +12,5 @@ interface ApiService {
     fun getAlbums(@Url url:String):Call<List<Album>>
 
     @GET
-    suspend fun getArtists(@Url url:String):Response<List<Artist>>
+    fun getArtists(@Url url:String):Response<List<Artist>>
 }

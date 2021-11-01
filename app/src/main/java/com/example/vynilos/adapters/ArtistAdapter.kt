@@ -10,15 +10,21 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vynilos.R
 import com.example.vynilos.databinding.ItemArtistBinding
+import com.example.vynilos.models.Album
 import com.example.vynilos.models.Artist
 import com.squareup.picasso.Picasso
 
 
-class ArtistAdapter (val artists: List<Artist>): RecyclerView.Adapter<ArtistAdapter.ArtistHolder>(){
+class ArtistAdapter (): RecyclerView.Adapter<ArtistAdapter.ArtistHolder>(){
+    private var artists : List<Artist>? = null
 
     override fun onBindViewHolder(holder: ArtistHolder, position: Int) {
-        val item = artists[position]
-        holder.bind(item)
+        val item = artists?.get(position)
+        holder.bind(item!!)
+    }
+
+    fun setAlbums(artistsList: List<Artist>) {
+        this.artists = artistsList
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtistHolder {
@@ -27,7 +33,8 @@ class ArtistAdapter (val artists: List<Artist>): RecyclerView.Adapter<ArtistAdap
     }
 
     override fun getItemCount(): Int {
-        return artists.size
+        if(artists == null) return 0
+        else return artists?.size!!
     }
 
     class ArtistHolder(view: View) : RecyclerView.ViewHolder(view) {
