@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.vynilos.apis.ApiService
 import com.example.vynilos.apis.RetrofitInstance
-import com.example.vynilos.models.Album
 import com.example.vynilos.models.Artist
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,7 +24,7 @@ class ArtistsActivityViewModel: ViewModel() {
     fun makeApiCall() {
         val retrofitInstance = RetrofitInstance.getRetrofitInstance()
         val retroService = retrofitInstance.create(ApiService::class.java)
-        val call = retroService.getArtists("/musicians")
+        val call = retroService.getArtists("/bands")
 
         call.enqueue(object : Callback<List<Artist>> {
             override fun onFailure(call: Call<List<Artist>>, t: Throwable) {
