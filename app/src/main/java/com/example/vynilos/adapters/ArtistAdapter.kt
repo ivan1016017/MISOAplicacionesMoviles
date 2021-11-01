@@ -37,7 +37,7 @@ class ArtistAdapter (val artists: List<Artist>): RecyclerView.Adapter<ArtistAdap
             binding.tvArtistName.text = artist.name
             binding.tvArtistDescription.text = artist.description
             Picasso.get().load(artist.image).into(binding.ivArtistImage)
-            //itemView.setOnClickListener(View.OnClickListener { Toast.makeText(context, "Clicked on $album.name", Toast.LENGTH_SHORT).show() })
+            //itemView.setOnClickListener(View.OnClickListener { Toast.makeText(context, "Clicked on $artist.name", Toast.LENGTH_SHORT).show() })
         }
     }
 
