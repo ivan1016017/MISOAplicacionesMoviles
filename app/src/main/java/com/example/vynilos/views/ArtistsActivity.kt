@@ -28,7 +28,7 @@ class ArtistsActivity:AppCompatActivity() {
         binding = ActivityArtistsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initRecyclerView()
-        getAlbums()
+        getArtists()
     }
 
     private fun initRecyclerView() {
@@ -42,7 +42,7 @@ class ArtistsActivity:AppCompatActivity() {
         addConverterFactory(GsonConverterFactory.create()).build()
     }
 
-    private fun getAlbums() {
+    private fun getArtists() {
         CoroutineScope(Dispatchers.IO).launch {
             val call: Response<List<Artist>> = getRetrofit().create(ApiService::class.java).getArtists("/musicians")
             val artistsResponse: List<Artist>? = call.body()
