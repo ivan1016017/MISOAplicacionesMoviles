@@ -1,2 +1,2 @@
 # MISOAplicacionesMoviles
-Repositorio del proyeco del curso de aplicaciones moviles MISO
+Repositorio del proyecto del curso de aplicaciones moviles MISO
