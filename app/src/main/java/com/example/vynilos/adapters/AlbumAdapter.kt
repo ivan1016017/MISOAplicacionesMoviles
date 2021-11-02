@@ -4,19 +4,22 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vynilos.R
 import com.example.vynilos.databinding.ItemAlbumBinding
 import com.example.vynilos.models.Album
 import com.squareup.picasso.Picasso
 
-class AlbumAdapter(val albums:List<Album>) : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
+class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
+    private var albums : List<Album>? = null
+
     override fun onBindViewHolder(holder: AlbumHolder, position: Int) {
-        val item = albums[position]
-        holder.bind(item)
+        val item = albums?.get(position)
+        holder.bind(item!!)
+    }
+
+    fun setAlbums(albumsList: List<Album>) {
+        this.albums = albumsList
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumHolder {
@@ -25,7 +28,8 @@ class AlbumAdapter(val albums:List<Album>) : RecyclerView.Adapter<AlbumAdapter.A
     }
 
     override fun getItemCount(): Int {
-        return albums.size
+        if(albums == null) return 0
+        else return albums?.size!!
     }
 
     class AlbumHolder(view: View) : RecyclerView.ViewHolder(view) {
