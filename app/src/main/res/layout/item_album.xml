@@ -55,7 +55,7 @@
                 android:id="@+id/tvGenre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/primary_purple"
+                android:textColor="@color/secondary_purple"
                 android:layout_marginTop="4dp"
                 tools:text="Salsa"
                 />
@@ -67,7 +67,7 @@
                     android:id="@+id/tvRecordLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/primary_purple"
+                    android:textColor="@color/secondary_purple"
                     tools:text="Elektra"
                     android:layout_gravity="end"
                     android:layout_marginTop="4dp"

@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.vynilos.R
 import com.example.vynilos.adapters.AlbumAdapter
 import com.example.vynilos.databinding.ActivityAlbumsBinding
 import com.example.vynilos.viewmodels.AlbumsActivityViewModel
@@ -19,9 +20,21 @@ class AlbumsActivity : AppCompatActivity() {
         binding = ActivityAlbumsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setToolbarText()
+        handleBackClick()
         initViewModel()
         initRecyclerView()
    }
+
+    private fun setToolbarText() {
+        binding.toolbar.toolbarText.text = getString(R.string.albums)
+    }
+
+    private fun handleBackClick() {
+        binding.toolbar.leftIcon.setOnClickListener {
+            moveTaskToBack(true)
+        }
+    }
 
     private fun initRecyclerView() {
         adapter = AlbumAdapter()

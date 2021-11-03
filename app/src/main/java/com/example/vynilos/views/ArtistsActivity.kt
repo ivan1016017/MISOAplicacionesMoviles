@@ -22,9 +22,21 @@ class ArtistsActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityArtistsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setToolbarText()
+        handleBackClick()
         initViewModel()
         initRecyclerView()
 
+    }
+
+    private fun handleBackClick() {
+        binding.toolbar.leftIcon.setOnClickListener {
+            moveTaskToBack(true)
+        }
+    }
+
+    private fun setToolbarText() {
+        binding.toolbar.toolbarText.text = getString(R.string.artists)
     }
 
     private fun initRecyclerView() {
