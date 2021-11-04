@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vynilos.MainActivity
 import com.example.vynilos.R
-import com.example.vynilos.adapters.AlbumAdapter
+import com.example.vynilos.views.adapters.AlbumAdapter
 import com.example.vynilos.databinding.ActivityAlbumsBinding
 import com.example.vynilos.viewmodels.AlbumsActivityViewModel
 
