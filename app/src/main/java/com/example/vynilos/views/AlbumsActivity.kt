@@ -1,13 +1,16 @@
 package com.example.vynilos.views
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.vynilos.MainActivity
 import com.example.vynilos.R
-import com.example.vynilos.adapters.AlbumAdapter
+import com.example.vynilos.views.adapters.AlbumAdapter
 import com.example.vynilos.databinding.ActivityAlbumsBinding
 import com.example.vynilos.viewmodels.AlbumsActivityViewModel
 
@@ -31,8 +34,8 @@ class AlbumsActivity : AppCompatActivity() {
     }
 
     private fun handleBackClick() {
-        binding.toolbar.leftIcon.setOnClickListener {
-            moveTaskToBack(true)
+        binding.toolbar.leftIcon.setOnClickListener { view ->
+            goToMainView(view)
         }
     }
 
@@ -53,5 +56,11 @@ class AlbumsActivity : AppCompatActivity() {
 
     private fun showError() {
         Toast.makeText(this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun goToMainView(view: View) {
+        val intent = Intent(this, MainActivity::class.java).apply {
+        }
+        startActivity(intent)
     }
 }

@@ -1,10 +1,9 @@
-package com.example.vynilos.apis
+package com.example.vynilos.network
 
 import com.example.vynilos.models.Artist
 import com.example.vynilos.models.Album
 import com.example.vynilos.models.DetailAlbum
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Url
 
