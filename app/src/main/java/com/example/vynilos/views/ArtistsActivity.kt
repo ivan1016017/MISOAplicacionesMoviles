@@ -8,7 +8,7 @@ import com.example.vynilos.R
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.vynilos.adapters.ArtistAdapter
+import com.example.vynilos.views.adapters.ArtistAdapter
 import com.example.vynilos.databinding.ActivityArtistsBinding
 import com.example.vynilos.viewmodels.ArtistsActivityViewModel
 import androidx.lifecycle.Observer

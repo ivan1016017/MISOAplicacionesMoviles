@@ -1,8 +1,8 @@
-package com.example.vynilos.apis
+package com.example.vynilos.network
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitInstance {
+class NetworkServiceAdapter {
 
     companion object {
         val BASE_URL = "https://grupo-11-android.herokuapp.com/"

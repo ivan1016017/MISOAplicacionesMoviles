@@ -1,4 +1,4 @@
-package com.example.vynilos.adapters
+package com.example.vynilos.views.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
