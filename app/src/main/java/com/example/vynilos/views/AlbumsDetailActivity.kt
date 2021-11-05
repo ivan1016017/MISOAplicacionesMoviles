@@ -29,7 +29,7 @@ class AlbumsDetailActivity: AppCompatActivity() {
 
     private fun handleBackClick() {
         binding.toolbar.leftIcon.setOnClickListener { view ->
-            goToMainView(view)
+            this.finish()
         }
     }
 
@@ -46,9 +46,4 @@ class AlbumsDetailActivity: AppCompatActivity() {
         viewModel.makeApiCall(albumId)
     }
 
-    private fun goToMainView(view: View) {
-        val intent = Intent(this, AlbumsActivity::class.java).apply {
-        }
-        startActivity(intent)
-    }
 }
