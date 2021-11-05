@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Vynilos</string>
-    <string name="detail_album_artist">Artista</string>
+    <string name="detail_album_artist">Genero</string>
     <string name="detail_album_description">Descripcion</string>
     <string name="albums">Álbumes</string>
     <string name="artists">Artistas</string>
@@ -10,5 +10,6 @@
     <string name="artists_menu_text">Catalogo de artistas</string>
     <string name="collector_menu_text">Catalogo de coleccionistas</string>
     <string name="create_album_menu_text">Crear album</string>
+    <string name="description_Row">GOBACKROWIMAGE</string>
 </resources>
 
