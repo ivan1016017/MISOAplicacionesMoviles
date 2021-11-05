@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vynilos">
         <activity
+            android:name=".activity_detail_albums"
+            android:exported="true" />
+        <activity
             android:name=".views.ArtistsActivity"
             android:exported="false" />
         <activity
@@ -23,9 +26,9 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                      <category android:name="android.intent.category.LAUNCHER" />
-                  </intent-filter>
-              </activity>
-          </application>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
 
-      </manifest>
+</manifest>

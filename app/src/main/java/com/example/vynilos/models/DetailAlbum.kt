@@ -5,5 +5,5 @@ data class DetailAlbum(
     val name: String?,
     val image: String?,
     val description: String?,
-    val creationDate: String?,
+    val releaseDate: String?,
 )

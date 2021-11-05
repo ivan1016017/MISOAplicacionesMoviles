@@ -15,7 +15,7 @@ interface ApiService {
     fun getArtists(@Url url:String):Call<List<Artist>>
 
     @GET
-    fun getAlbumsDetail(@Url url:String):Call<List<DetailAlbum>>
+    fun getAlbumDetail(@Url url:String):Call<List<DetailAlbum>>
 
 
 }
