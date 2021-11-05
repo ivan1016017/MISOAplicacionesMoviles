@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.scrollTo
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.filters.LargeTest
@@ -12,6 +13,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.hamcrest.Description
 import org.hamcrest.Matcher
+import org.hamcrest.Matchers.`is`
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.TypeSafeMatcher
 import org.junit.Rule
@@ -27,21 +29,20 @@ class AlbumsActivityTest {
     var mActivityTestRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
-    fun albumsActivityTest() {
+    fun albumsActivityTest2() {
         val materialButton = onView(
             allOf(
                 withId(R.id.btn_albums_menu), withText("Catalogo de albumes"),
                 childAtPosition(
                     childAtPosition(
-                        withId(android.R.id.content),
+                        withClassName(`is`("android.widget.ScrollView")),
                         0
                     ),
-                    3
-                ),
-                isDisplayed()
+                    1
+                )
             )
         )
-        materialButton.perform(click())
+        materialButton.perform(scrollTo(), click())
 
         val textView = onView(
             allOf(

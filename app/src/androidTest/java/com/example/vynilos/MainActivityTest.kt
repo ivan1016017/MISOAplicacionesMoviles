@@ -4,10 +4,11 @@ package com.example.vynilos
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
-import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.filters.LargeTest
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.hamcrest.Matchers.allOf
+import org.hamcrest.core.IsInstanceOf
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -21,7 +22,7 @@ class MainActivityTest {
     var mActivityTestRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
-    fun mainActivityTest() {
+    fun mainActivityTest2() {
         val textView = onView(
             allOf(
                 withText("Bienvenido a MusicApp"),
@@ -34,7 +35,7 @@ class MainActivityTest {
         val button = onView(
             allOf(
                 withId(R.id.btn_albums_menu), withText("Catalogo de albumes"),
-                withParent(withParent(withId(android.R.id.content))),
+                withParent(withParent(IsInstanceOf.instanceOf(android.widget.ScrollView::class.java))),
                 isDisplayed()
             )
         )
@@ -43,7 +44,7 @@ class MainActivityTest {
         val button2 = onView(
             allOf(
                 withId(R.id.btn_artists_menu), withText("Catalogo de artistas"),
-                withParent(withParent(withId(android.R.id.content))),
+                withParent(withParent(IsInstanceOf.instanceOf(android.widget.ScrollView::class.java))),
                 isDisplayed()
             )
         )
@@ -51,8 +52,8 @@ class MainActivityTest {
 
         val button3 = onView(
             allOf(
-                withId(R.id.btn_artists_menu), withText("Catalogo de artistas"),
-                withParent(withParent(withId(android.R.id.content))),
+                withId(R.id.button8), withText("Catalogo de coleccionistas"),
+                withParent(withParent(IsInstanceOf.instanceOf(android.widget.ScrollView::class.java))),
                 isDisplayed()
             )
         )
