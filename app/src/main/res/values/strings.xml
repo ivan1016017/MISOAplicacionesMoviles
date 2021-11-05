@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">vynilos</string>
+    <string name="app_name">Vynilos</string>
+    <string name="detail_album_artist">Artista</string>
+    <string name="detail_album_description">Descripcion</string>
     <string name="albums">Álbumes</string>
     <string name="artists">Artistas</string>
     <string name="welcome_title">Bienvenido a MusicApp</string>
