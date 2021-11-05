@@ -84,6 +84,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:layout_margin="15dp"
+            android:id="@+id/tvDescription"
             tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis felis leo, vitae gravida sapien sagittis in. Nullam sem massa, aliquet at tempor a, tempor nec elit. Mauris lobortis, lorem eu imperdiet egestas, neque ex tristique dui, et blandit orci lacus vitae nunc. Morbi congue lacus ac nisi laoreet, ac gravida mi facilisis. Nullam vulputate dui est, eget luctus turpis posuere vitae. Integer elementum erat in urna sollicitudin ullamcorper. Donec egestas tincidunt lectus, et convallis velit. Donec venenatis risus odio, nec consectetur purus faucibus non. Curabitur scelerisque neque eu enim pulvinar tempor."></TextView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

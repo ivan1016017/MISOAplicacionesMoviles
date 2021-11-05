@@ -1,16 +1,38 @@
 package com.example.vynilos.views
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.vynilos.R
-import com.example.vynilos.repositories.AlbumDetailRepository
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.example.vynilos.databinding.ActivityDetailAlbumBinding
+import com.example.vynilos.viewmodels.AlbumDetailViewModel
+import com.example.vynilos.viewmodels.AlbumsActivityViewModel
+import com.squareup.picasso.Picasso
 
 class AlbumsDetailActivity: AppCompatActivity() {
+    private lateinit var binding: ActivityDetailAlbumBinding
+    private val viewModel: AlbumDetailViewModel by viewModels()
 
-    private lateinit var viewModel: ListViewModel
-    private val albumRepository = AlbumDetailRepository(arrayListOf())
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_detail_album)
+        binding = ActivityDetailAlbumBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        var albumId = intent.getStringExtra("albumId")
+        if (albumId != null) {
+            initViewModel(albumId.toInt())
+        }
+    }
+
+    private fun initViewModel(albumId: Number ) {
+        val viewModel = ViewModelProvider(this).get(AlbumDetailViewModel::class.java)
+        viewModel.getLiveDataObserver().observe(this, Observer {
+            binding.title.text = it.name
+            binding.tvDescription.text = it.description
+            Picasso.get().load(it.cover).into(binding.ivCover)
+        })
+
+        viewModel.makeApiCall(albumId)
     }
 }

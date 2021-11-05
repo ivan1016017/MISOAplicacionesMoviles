@@ -23,4 +23,17 @@ class AlbumRepository(){
             }
         })
     }
+
+    fun getAlbum(id: Number, liveDataList: MutableLiveData<Album>) {
+        val call = service.getAlbum("/albums/" + id)
+
+        call.enqueue(object : Callback<Album> {
+            override fun onFailure(call: Call<Album>, t: Throwable) {
+                //#Need to figureout how to handle error
+            }
+            override fun onResponse(call: Call<Album>, response: Response<Album>) {
+                liveDataList.postValue(response.body())
+            }
+        })
+    }
 }
