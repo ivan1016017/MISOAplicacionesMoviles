@@ -54,7 +54,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-This application runs on native Android and its function is to be able to store, share and interact with a world of songs and people who like music wherever you are.Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
+This application runs on native Android and its function is to be able to store, share and interact with a world of songs and people who like music wherever you are.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -66,7 +66,7 @@ This application runs on native Android and its function is to be able to store,
 * [Android Studio](https://developer.android.com/studio)
 * [JetPack](https://developer.android.com/jetpack?gclid=CjwKCAjwz5iMBhAEEiwAMEAwGCxCGkFJSmA3Puo09LfzZzQeSwM8yOPpcNiSZBl4qq7rBJUVaof7fhoClPwQAvD_BwE&gclsrc=aw.ds)
 * [Retrofit](https://square.github.io/retrofit/)
-* [Espresso](https://developer.android.com/training/testing/espresso
+* [Espresso](https://developer.android.com/training/testing/espresso)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -115,7 +115,7 @@ See the [open issues](https://ionicagile.atlassian.net/jira/software/projects/NC
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -124,10 +124,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Wenceslao Crhistopher Paez Chavez - w.paezc@uniandes.edu.co
-Ivan Dario Peñaloza Rojas - i.penalozar@uniandes.edu.co
-Herald olivares - h.olivares@uniandes.edu.co
-Mateo Castaño  - m.castano1@uniandes.edu.co
+- [X] Wenceslao Crhistopher Paez Chavez - w.paezc@uniandes.edu.co
+- [X] Ivan Dario Peñaloza Rojas - i.penalozar@uniandes.edu.co
+- [X] Herald olivares - h.olivares@uniandes.edu.co
+- [X] Mateo Castaño  - m.castano1@uniandes.edu.co
 
 Project Link: [https://github.com/ivan1016017/MISOAplicacionesNube](https://github.com/github_username/repo_name)
 
