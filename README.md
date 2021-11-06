@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div id="top"></div>
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
@@ -170,7 +169,3 @@ Project Link: [https://github.com/ivan1016017/MISOAplicacionesNube](https://gith
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/app.gif
-=======
-# MISOAplicacionesMoviles
-Repositorio del proyecto del curso de aplicaciones moviles MISO
->>>>>>> 08f92358507b30d6999e89696828b557378c1a27
