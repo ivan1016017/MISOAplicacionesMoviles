@@ -35,7 +35,7 @@ class AlbumsActivity : AppCompatActivity() {
 
     private fun handleBackClick() {
         binding.toolbar.leftIcon.setOnClickListener { view ->
-            goToMainView(view)
+            this.finish()
         }
     }
 
@@ -56,11 +56,5 @@ class AlbumsActivity : AppCompatActivity() {
 
     private fun showError() {
         Toast.makeText(this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show()
-    }
-
-    private fun goToMainView(view: View) {
-        val intent = Intent(this, MainActivity::class.java).apply {
-        }
-        startActivity(intent)
     }
 }
