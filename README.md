@@ -1,13 +1,4 @@
 <div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="https://github.com/ivan1016017/MISOAplicacionesNube">
@@ -48,13 +39,29 @@
 </details>
 
 
+## Instalación del aplicativo
+### Sprint 1
+ Para el **Sprint 1**En la raiz del proyecto se encuentra el archivo ```vinilos_sprint_1.apk```, el cual debe ser instalado en cualquier dispositivo con version Android  Lollipop 5.0 o superior.
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Pruebas automatizadas Espresso
+### Sprint 1
+Se recomienda ejecutar las pruebas en un emulador PIXEL XL con API 22
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+Para ejecutar las 4 pruebas Espresso E2E ir a la carpeta app > java, dar click derecho en el paquete ```com.examples.vynilos(androidTest)``` y seleccionar ```Run Tests in ...```. 
 
-This application runs on native Android and its function is to be able to store, share and interact with a world of songs and people who like music wherever you are.
+A continuación les dejamos un GIF con los pasos a seguir y su ejecución
+
+[![Product Name Screen Shot][product-screenshot]](https://github.com/ivan1016017/MISOAplicacionesMoviles/blob/main/images/app.gif)
+
+## Pruebas manuales de aceptación
+### Sprint 1
+Video prueba manual de aceptación en dispositivo **HUAWEI Y7 - Android 7.0**:
+[https://youtu.be/P0oZQQSJeZc](https://youtu.be/P0oZQQSJeZc) 
+
+Video prueba manual de aceptación en dispositivo **Xiaomi REDMI 9 - Android 10.0**:
+[https://youtu.be/lOmypBVO8MI](https://youtu.be/lOmypBVO8MI) 
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
