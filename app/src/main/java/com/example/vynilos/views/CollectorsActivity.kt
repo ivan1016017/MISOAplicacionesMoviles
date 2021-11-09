@@ -11,16 +11,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vynilos.MainActivity
 import com.example.vynilos.R
 import com.example.vynilos.views.adapters.AlbumAdapter
-import com.example.vynilos.databinding.ActivityAlbumsBinding
-import com.example.vynilos.viewmodels.AlbumsActivityViewModel
+import com.example.vynilos.databinding.ActivityCollectorsBinding
+import com.example.vynilos.viewmodels.CollectorsActivityViewModel
 
 class CollectorsActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityAlbumsBinding
+    private lateinit var binding: ActivityCollectorsBinding
     private lateinit var adapter: AlbumAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAlbumsBinding.inflate(layoutInflater)
+        binding = ActivityCollectorsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setToolbarText()
@@ -41,14 +41,14 @@ class CollectorsActivity : AppCompatActivity() {
 
     private fun initRecyclerView() {
         adapter = AlbumAdapter()
-        binding.rvAlbums.layoutManager = LinearLayoutManager(this)
-        binding.rvAlbums.adapter = adapter
+        binding.rvCollectors.layoutManager = LinearLayoutManager(this)
+        binding.rvCollectors.adapter = adapter
     }
 
     private fun initViewModel() {
-        val viewModel = ViewModelProvider(this).get(AlbumsActivityViewModel::class.java)
+        val viewModel = ViewModelProvider(this).get(CollectorsActivityViewModel::class.java)
         viewModel.getLiveDataObserver().observe(this, Observer {
-            adapter.setAlbums(it)
+            adapter.setCollectors(it)
             adapter.notifyDataSetChanged()
         })
         viewModel.makeApiCall()
