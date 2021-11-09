@@ -10,15 +10,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vynilos.MainActivity
 import com.example.vynilos.R
-import com.example.vynilos.views.adapters.CollectorAdapter
+import com.example.vynilos.views.adapters.AlbumAdapter
 import com.example.vynilos.databinding.ActivityAlbumsBinding
-import com.example.vynilos.databinding.ActivityCollectorsBinding
 import com.example.vynilos.viewmodels.AlbumsActivityViewModel
 
-
 class CollectorsActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityCollectorsBinding
-    private lateinit var adapter: CollectorAdapter
+    private lateinit var binding: ActivityAlbumsBinding
+    private lateinit var adapter: AlbumAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
