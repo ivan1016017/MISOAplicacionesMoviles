@@ -1,13 +1,16 @@
 package com.example.vynilos.views.adapters
 
-import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vynilos.R
 import com.example.vynilos.databinding.ItemAlbumBinding
 import com.example.vynilos.models.Album
+import com.example.vynilos.views.AlbumsActivity
+import com.example.vynilos.views.AlbumsDetailActivity
 import com.squareup.picasso.Picasso
 
 class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
@@ -41,7 +44,12 @@ class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
             binding.tvGenre.text = album.genre
             binding.tvRecordLabel.text = album.recordLabel
             Picasso.get().load(album.cover).into(binding.ivCover)
-            //itemView.setOnClickListener(View.OnClickListener { Toast.makeText(context, "Clicked on $album.name", Toast.LENGTH_SHORT).show() })
+
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, AlbumsDetailActivity::class.java)
+                intent.putExtra("albumId", album.id.toString())
+                itemView.context.startActivity(intent)
+            }
         }
     }
 }
