@@ -16,6 +16,7 @@ import org.hamcrest.Matcher
 import org.hamcrest.Matchers.`is`
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.TypeSafeMatcher
+import org.hamcrest.core.IsInstanceOf
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -54,6 +55,14 @@ class CollectorActivityTest {
         textView.check(matches(withText("Coleccionistas")))
         Thread.sleep(2000)
 
+        val textView2 = onView(
+            allOf(
+                withId(R.id.tvCollectorName), withText("Manolo Bellon"),
+                withParent(withParent(IsInstanceOf.instanceOf(android.widget.LinearLayout::class.java))),
+                isDisplayed()
+            )
+        )
+        textView2.check(matches(withText("Manolo Bellon")))
 
         val appCompatImageView = onView(
             allOf(
