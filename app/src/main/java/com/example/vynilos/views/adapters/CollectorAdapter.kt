@@ -23,7 +23,7 @@ class CollectorAdapter (): RecyclerView.Adapter<CollectorAdapter.CollectorHolder
         holder.bind(item!!)
     }
 
-    fun setAlbums(collectorsList: List<Collector>) {
+    fun setCollectors(collectorsList: List<Collector>) {
         this.collectors = collectorsList
     }
 

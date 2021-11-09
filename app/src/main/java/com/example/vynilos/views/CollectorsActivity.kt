@@ -10,13 +10,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vynilos.MainActivity
 import com.example.vynilos.R
-import com.example.vynilos.views.adapters.AlbumAdapter
+import com.example.vynilos.views.adapters.CollectorAdapter
 import com.example.vynilos.databinding.ActivityCollectorsBinding
 import com.example.vynilos.viewmodels.CollectorsActivityViewModel
 
 class CollectorsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCollectorsBinding
-    private lateinit var adapter: AlbumAdapter
+    private lateinit var adapter: CollectorAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class CollectorsActivity : AppCompatActivity() {
     }
 
     private fun setToolbarText() {
-        binding.toolbar.toolbarText.text = getString(R.string.albums)
+        binding.toolbar.toolbarText.text = getString(R.string.collectors)
     }
 
     private fun handleBackClick() {
@@ -40,7 +40,7 @@ class CollectorsActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        adapter = AlbumAdapter()
+        adapter = CollectorAdapter()
         binding.rvCollectors.layoutManager = LinearLayoutManager(this)
         binding.rvCollectors.adapter = adapter
     }
