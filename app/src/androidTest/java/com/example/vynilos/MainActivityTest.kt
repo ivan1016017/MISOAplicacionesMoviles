@@ -52,7 +52,7 @@ class MainActivityTest {
 
         val button3 = onView(
             allOf(
-                withId(R.id.button8), withText("Catalogo de coleccionistas"),
+                withId(R.id.btn_collectors_menu), withText("Catalogo de coleccionistas"),
                 withParent(withParent(IsInstanceOf.instanceOf(android.widget.ScrollView::class.java))),
                 isDisplayed()
             )
