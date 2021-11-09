@@ -33,7 +33,7 @@ class ArtistsActivity:AppCompatActivity() {
 
     private fun handleBackClick() {
         binding.toolbar.leftIcon.setOnClickListener { view ->
-            goToMainView(view)
+            this.finish()
         }
     }
 
@@ -46,8 +46,6 @@ class ArtistsActivity:AppCompatActivity() {
         binding.rvArtists.layoutManager = LinearLayoutManager(this)
         binding.rvArtists.adapter = adapter
     }
-
-
 
     private fun initViewModel() {
         val viewModel = ViewModelProvider(this).get(ArtistsActivityViewModel::class.java)
@@ -62,10 +60,5 @@ class ArtistsActivity:AppCompatActivity() {
         Toast.makeText(this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show()
     }
 
-    private fun goToMainView(view: View) {
-        val intent = Intent(this, MainActivity::class.java).apply {
-        }
-        startActivity(intent)
-    }
 
 }
