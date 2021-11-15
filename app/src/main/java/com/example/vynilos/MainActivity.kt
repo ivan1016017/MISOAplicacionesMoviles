@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.Button
 import com.example.vynilos.views.AlbumsActivity
 import com.example.vynilos.views.ArtistsActivity
+import com.example.vynilos.views.CollectorsActivity
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +26,11 @@ class MainActivity : AppCompatActivity() {
         artistMenuButton.setOnClickListener { view ->
             openArtistListView(view)
         }
+
+        val collectorsMenuButton: Button = findViewById(R.id.btn_collectors_menu)
+        collectorsMenuButton.setOnClickListener { view ->
+            openCollectorListView(view)
+        }
     }
 
     private fun openAlbumListView(view: View) {
@@ -34,6 +41,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun openArtistListView(view: View) {
         val intent = Intent(this, ArtistsActivity::class.java).apply {
+        }
+        startActivity(intent)
+    }
+
+    private fun openCollectorListView(view: View) {
+        val intent = Intent(this, CollectorsActivity::class.java).apply {
         }
         startActivity(intent)
     }

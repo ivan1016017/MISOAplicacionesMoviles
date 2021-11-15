@@ -3,6 +3,7 @@
     <string name="detail_album_artist">Genero</string>
     <string name="detail_album_description">Descripcion</string>
     <string name="albums">Álbumes</string>
+    <string name="collectors">Coleccionistas</string>
     <string name="artists">Artistas</string>
     <string name="welcome_title">Bienvenido a MusicApp</string>
     <string name="welcome_heading">Donde está toda tú música en un solo lugar</string>

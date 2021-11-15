@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vynilos">
         <activity
+
+            android:name=".views.CollectorsActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.AlbumsDetailActivity"
             android:exported="true" />
         <activity
