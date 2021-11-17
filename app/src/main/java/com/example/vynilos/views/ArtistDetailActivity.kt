@@ -36,7 +36,7 @@ class ArtistDetailActivity: AppCompatActivity() {
         viewModel.getLiveDataObserver().observe(this, Observer {
             binding.title.text = it.name
             binding.tvDescription.text = it.description
-            binding.date.text = it.birthDate
+            binding.date.text = it.creationDate
             Picasso.get().load(it.image).into(binding.ivCover)
         })
 

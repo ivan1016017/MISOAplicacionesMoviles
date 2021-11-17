@@ -7,5 +7,4 @@ data class Artist (
     val image: String,
     val description: String,
     val creationDate: String,
-    val birthDate: String,
         )

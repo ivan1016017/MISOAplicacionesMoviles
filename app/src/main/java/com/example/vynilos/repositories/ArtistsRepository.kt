@@ -24,7 +24,7 @@ class ArtistsRepository {
         })
     }
     fun getArtist(id: Number, liveDataList: MutableLiveData<Artist>) {
-        val call = service.getArtist("/bands/$id/musicians/3")
+        val call = service.getArtist("/bands/$id")
 
         call.enqueue(object : Callback<Artist> {
             override fun onFailure(call: Call<Artist>, t: Throwable) {
