@@ -1,15 +1,11 @@
 package com.example.vynilos.views
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.vynilos.databinding.ActivityArtistsDetailBinding
-import com.example.vynilos.databinding.ActivityDetailAlbumBinding
-import com.example.vynilos.viewmodels.AlbumDetailViewModel
 import com.example.vynilos.viewmodels.ArtistDetailViewModel
 import com.squareup.picasso.Picasso
 
@@ -35,17 +31,16 @@ class ArtistDetailActivity: AppCompatActivity() {
         }
     }
 
-    private fun initViewModel(albumId: Number ) {
+    private fun initViewModel(artistId: Number ) {
         val viewModel = ViewModelProvider(this).get(ArtistDetailViewModel::class.java)
         viewModel.getLiveDataObserver().observe(this, Observer {
             binding.title.text = it.name
             binding.tvDescription.text = it.description
-            binding.gender.text = it.genre
-            binding.date.text = it.releaseDate
-            Picasso.get().load(it.cover).into(binding.ivCover)
+            binding.date.text = it.birthDate
+            Picasso.get().load(it.image).into(binding.ivCover)
         })
 
-        viewModel.makeApiCall(albumId)
+        viewModel.makeApiCall(artistId)
     }
 
 }

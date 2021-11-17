@@ -12,6 +12,6 @@
     <string name="collector_menu_text">Catalogo de coleccionistas</string>
     <string name="create_album_menu_text">Crear album</string>
     <string name="description_Row">GOBACKROWIMAGE</string>
-    <string name="best_song">Mejor Cancion</string>
+    <string name="birthday">Fecha de nacimiento</string>
 </resources>
 

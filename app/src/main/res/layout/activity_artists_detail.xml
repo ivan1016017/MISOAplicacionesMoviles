@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.ArtistsDetailActivity"
+    tools:context=".views.ArtistDetailActivity"
     android:background="@color/black"
     >
     <RelativeLayout
@@ -20,7 +20,10 @@
             android:id="@+id/spacer"
             android:layout_width="match_parent"
             android:layout_height="50dp"/>
-        <include android:id="@+id/toolbar" layout="@layout/toolbar_description" />
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_description" />
 
         <TextView
             android:id="@+id/title"
@@ -30,7 +33,7 @@
             android:layout_centerHorizontal="true"
             android:textColor="@color/white"
             android:textSize="21sp"
-            tools:text="The 2nd Law"/>
+            tools:text="Freddy Mercury"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivCover"
@@ -51,28 +54,19 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/title"
             android:layout_marginStart="15dp"
-            android:text="@string/detail_album_artist"
+            android:text="@string/birthday"
             android:textColor="@color/white"
             android:textSize="15sp" />
 
         <TextView
-            android:id="@+id/gender"
+            android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/artistName"
             android:layout_marginStart="15dp"
             android:textColor="@color/white"
             android:textSize="21sp"
-            tools:text="Salsa"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/gender"
-            android:layout_marginStart="15dp"
-            android:textColor="@color/white"
-            android:id="@+id/date"
-            tools:text="2012"/>
+            tools:text="15 de enero de 1994"/>
     </RelativeLayout>
 
     <RelativeLayout

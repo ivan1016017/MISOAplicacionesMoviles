@@ -1,10 +1,11 @@
 package com.example.vynilos.viewmodels
 
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.vynilos.models.Artist
 import com.example.vynilos.repositories.ArtistsRepository
 
-class ArtistDetailViewModel {
+class ArtistDetailViewModel(): ViewModel() {
     lateinit var liveData: MutableLiveData<Artist>
     private val artistRepository = ArtistsRepository()
 
