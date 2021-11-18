@@ -23,4 +23,17 @@ class CollectorsRepository(){
             }
         })
     }
+
+    fun getCollector(id: Number, liveDataList: MutableLiveData<Collector>) {
+        val call = service.getCollector("/collectors/$id")
+
+        call.enqueue(object : Callback<Collector> {
+            override fun onFailure(call: Call<Collector>, t: Throwable) {
+                //#Need to figureout how to handle error
+            }
+            override fun onResponse(call: Call<Collector>, response: Response<Collector>) {
+                liveDataList.postValue(response.body())
+            }
+        })
+    }
 }

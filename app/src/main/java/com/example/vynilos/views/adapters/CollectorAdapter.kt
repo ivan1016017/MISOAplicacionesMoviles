@@ -2,6 +2,7 @@ package com.example.vynilos.views.adapters
 
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.vynilos.R
 import com.example.vynilos.databinding.ItemCollectorBinding
 import com.example.vynilos.models.Collector
+import com.example.vynilos.views.AlbumsDetailActivity
+import com.example.vynilos.views.CollectorDetailActivity
 
 import com.squareup.picasso.Picasso
 
@@ -44,7 +47,12 @@ class CollectorAdapter (): RecyclerView.Adapter<CollectorAdapter.CollectorHolder
             binding.tvCollectorName.text = collector.name
             binding.tvTelephone.text = collector.telephone
             Picasso.get().load(collector.image).into(binding.ivCollectorCover)
-            //itemView.setOnClickListener(View.OnClickListener { Toast.makeText(context, "Clicked on $artist.name", Toast.LENGTH_SHORT).show() })
+
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, CollectorDetailActivity::class.java)
+                intent.putExtra("collectorId", collector.id.toString())
+                itemView.context.startActivity(intent)
+            }
         }
     }
 
