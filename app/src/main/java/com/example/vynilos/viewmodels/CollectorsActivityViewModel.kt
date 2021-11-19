@@ -2,7 +2,6 @@ package com.example.vynilos.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.vynilos.models.Artist
 import com.example.vynilos.models.Collector
 import com.example.vynilos.repositories.CollectorsRepository
 

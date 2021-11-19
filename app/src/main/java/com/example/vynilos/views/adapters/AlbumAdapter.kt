@@ -4,12 +4,10 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vynilos.R
 import com.example.vynilos.databinding.ItemAlbumBinding
 import com.example.vynilos.models.Album
-import com.example.vynilos.views.AlbumsActivity
 import com.example.vynilos.views.AlbumsDetailActivity
 import com.squareup.picasso.Picasso
 

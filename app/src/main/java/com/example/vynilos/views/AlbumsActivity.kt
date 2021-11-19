@@ -1,18 +1,13 @@
 package com.example.vynilos.views
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
-import androidx.lifecycle.Observer
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.vynilos.MainActivity
 import com.example.vynilos.R
-import com.example.vynilos.views.adapters.AlbumAdapter
 import com.example.vynilos.databinding.ActivityAlbumsBinding
 import com.example.vynilos.viewmodels.AlbumsActivityViewModel
+import com.example.vynilos.views.adapters.AlbumAdapter
 
 class AlbumsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAlbumsBinding

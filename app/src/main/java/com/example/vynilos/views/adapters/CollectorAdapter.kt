@@ -1,21 +1,15 @@
 package com.example.vynilos.views.adapters
 
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vynilos.R
 import com.example.vynilos.databinding.ItemCollectorBinding
 import com.example.vynilos.models.Collector
-import com.example.vynilos.views.AlbumsDetailActivity
 import com.example.vynilos.views.CollectorDetailActivity
-
 import com.squareup.picasso.Picasso
 
 class CollectorAdapter : RecyclerView.Adapter<CollectorAdapter.CollectorHolder>(){

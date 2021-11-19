@@ -1,9 +1,7 @@
 package com.example.vynilos.views
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.vynilos.databinding.ActivityArtistsDetailBinding
 import com.example.vynilos.viewmodels.ArtistDetailViewModel

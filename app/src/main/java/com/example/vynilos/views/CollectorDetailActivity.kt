@@ -1,10 +1,8 @@
 package com.example.vynilos.views
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
-import androidx.activity.viewModels
-import androidx.lifecycle.Observer
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.vynilos.databinding.ActivityCollectorDetailBinding
 import com.example.vynilos.viewmodels.CollectorDetailViewModel
