@@ -13,7 +13,6 @@ import com.squareup.picasso.Picasso
 
 class AlbumsDetailActivity: AppCompatActivity() {
     private lateinit var binding: ActivityDetailAlbumBinding
-    private val viewModel: AlbumDetailViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +34,7 @@ class AlbumsDetailActivity: AppCompatActivity() {
 
     private fun initViewModel(albumId: Number ) {
         val viewModel = ViewModelProvider(this).get(AlbumDetailViewModel::class.java)
-        viewModel.getLiveDataObserver().observe(this, Observer {
+        viewModel.getLiveDataObserver().observe(this, {
             binding.title.text = it.name
             binding.tvDescription.text = it.description
             binding.gender.text = it.genre

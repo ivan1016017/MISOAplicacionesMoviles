@@ -41,7 +41,7 @@ class CollectorDetailActivity : AppCompatActivity() {
 
     private fun initViewModel(albumId: Number ) {
         val viewModel = ViewModelProvider(this).get(CollectorDetailViewModel::class.java)
-        viewModel.getLiveDataObserver().observe(this, Observer {
+        viewModel.getLiveDataObserver().observe(this, {
             binding.tvCollectorName.text = it.name
             Picasso.get().load(it.image).into(binding.imageView)
         })

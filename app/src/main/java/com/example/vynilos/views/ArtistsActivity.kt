@@ -49,15 +49,11 @@ class ArtistsActivity:AppCompatActivity() {
 
     private fun initViewModel() {
         val viewModel = ViewModelProvider(this).get(ArtistsActivityViewModel::class.java)
-        viewModel.getLiveDataObserver().observe(this, Observer {
+        viewModel.getLiveDataObserver().observe(this, {
             adapter.setAlbums(it)
             adapter.notifyDataSetChanged()
         })
         viewModel.makeApiCall()
-    }
-
-    private fun showError() {
-        Toast.makeText(this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show()
     }
 
 

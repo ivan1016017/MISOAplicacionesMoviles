@@ -11,7 +11,6 @@ import com.squareup.picasso.Picasso
 
 class ArtistDetailActivity: AppCompatActivity() {
     private lateinit var binding: ActivityArtistsDetailBinding
-    private val viewModel: ArtistDetailViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +32,7 @@ class ArtistDetailActivity: AppCompatActivity() {
 
     private fun initViewModel(artistId: Number ) {
         val viewModel = ViewModelProvider(this).get(ArtistDetailViewModel::class.java)
-        viewModel.getLiveDataObserver().observe(this, Observer {
+        viewModel.getLiveDataObserver().observe(this, {
             binding.title.text = it.name
             binding.tvDescription.text = it.description
             binding.date.text = it.creationDate

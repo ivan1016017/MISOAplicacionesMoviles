@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.vynilos.models.Artist
 import com.example.vynilos.repositories.ArtistsRepository
 
-class ArtistDetailViewModel(): ViewModel() {
+class ArtistDetailViewModel : ViewModel() {
     lateinit var liveData: MutableLiveData<Artist>
     private val artistRepository = ArtistsRepository()
 

@@ -9,7 +9,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class AlbumRepository(){
+class AlbumRepository {
     private var serviceAdapter = NetworkServiceAdapter()
 
     fun getAlbums(liveDataList: MutableLiveData<List<Album>>) {

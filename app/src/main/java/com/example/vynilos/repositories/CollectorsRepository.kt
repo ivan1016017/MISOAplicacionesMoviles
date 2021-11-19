@@ -8,7 +8,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CollectorsRepository(){
+class CollectorsRepository {
     private var serviceAdapter = NetworkServiceAdapter()
 
     fun getCollectors(liveDataList: MutableLiveData<List<Collector>>) {

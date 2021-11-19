@@ -13,7 +13,7 @@ import com.example.vynilos.views.AlbumsActivity
 import com.example.vynilos.views.AlbumsDetailActivity
 import com.squareup.picasso.Picasso
 
-class AlbumAdapter() : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
+class AlbumAdapter : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
     private var albums : List<Album>? = null
 
     override fun onBindViewHolder(holder: AlbumHolder, position: Int) {

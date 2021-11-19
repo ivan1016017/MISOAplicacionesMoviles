@@ -12,7 +12,7 @@ import com.example.vynilos.views.ArtistDetailActivity
 import com.squareup.picasso.Picasso
 
 
-class ArtistAdapter(): RecyclerView.Adapter<ArtistAdapter.ArtistHolder>(){
+class ArtistAdapter : RecyclerView.Adapter<ArtistAdapter.ArtistHolder>(){
     private var artists : List<Artist>? = null
 
     override fun onBindViewHolder(holder: ArtistHolder, position: Int) {

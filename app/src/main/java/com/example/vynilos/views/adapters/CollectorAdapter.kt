@@ -18,7 +18,7 @@ import com.example.vynilos.views.CollectorDetailActivity
 
 import com.squareup.picasso.Picasso
 
-class CollectorAdapter (): RecyclerView.Adapter<CollectorAdapter.CollectorHolder>(){
+class CollectorAdapter : RecyclerView.Adapter<CollectorAdapter.CollectorHolder>(){
     private var collectors : List<Collector>? = null
 
     override fun onBindViewHolder(holder: CollectorHolder, position: Int) {
