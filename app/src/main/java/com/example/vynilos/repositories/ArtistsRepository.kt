@@ -15,15 +15,7 @@ class ArtistsRepository {
         serviceAdapter.getArtists(liveDataList)
     }
     fun getArtist(id: Number, liveDataList: MutableLiveData<Artist>) {
-        val call = service.getArtist("/bands/$id")
+        serviceAdapter.getArtist(liveDataList, id)
 
-        call.enqueue(object : Callback<Artist> {
-            override fun onFailure(call: Call<Artist>, t: Throwable) {
-                //#Need to figureout how to handle error
-            }
-            override fun onResponse(call: Call<Artist>, response: Response<Artist>) {
-                liveDataList.postValue(response.body())
-            }
-        })
     }
 }

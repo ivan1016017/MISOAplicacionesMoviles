@@ -63,6 +63,20 @@ class NetworkServiceAdapter {
         })
     }
 
+    fun getArtist(liveDataList: MutableLiveData<Artist>, id: Number) {
+        var service = getRetrofitInstance().create(ApiService::class.java)
+        val call = service.getArtist("/bands/$id")
+
+        call.enqueue(object : Callback<Artist> {
+            override fun onFailure(call: Call<Artist>, t: Throwable) {
+                //#Need to figureout how to handle error
+            }
+            override fun onResponse(call: Call<Artist>, response: Response<Artist>) {
+                liveDataList.postValue(response.body())
+            }
+        })
+    }
+
     fun getCollectors(liveDataList: MutableLiveData<List<Collector>>) {
         var service = getRetrofitInstance().create(ApiService::class.java)
         val call = service.getCollectors("/collectors")
@@ -72,6 +86,21 @@ class NetworkServiceAdapter {
                 liveDataList.postValue(emptyList())
             }
             override fun onResponse(call: Call<List<Collector>>, response: Response<List<Collector>>) {
+                liveDataList.postValue(response.body())
+            }
+        })
+    }
+
+    fun getCollector(liveDataList: MutableLiveData<Collector>, id: Number) {
+        var service = getRetrofitInstance().create(ApiService::class.java)
+
+        val call = service.getCollector("/collectors/$id")
+
+        call.enqueue(object : Callback<Collector> {
+            override fun onFailure(call: Call<Collector>, t: Throwable) {
+                //#Need to figureout how to handle error
+            }
+            override fun onResponse(call: Call<Collector>, response: Response<Collector>) {
                 liveDataList.postValue(response.body())
             }
         })
