@@ -1,8 +1,13 @@
 package com.example.vynilos.network
+import android.os.Handler
+import android.os.Looper
 import androidx.lifecycle.MutableLiveData
 import com.example.vynilos.models.Album
 import com.example.vynilos.models.Artist
 import com.example.vynilos.models.Collector
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,17 +27,32 @@ class NetworkServiceAdapter {
     }
 
     fun getAlbums(liveDataList: MutableLiveData<List<Album>>) {
-        var service = getRetrofitInstance().create(ApiService::class.java)
-        val call = service.getAlbums("/albums")
+        CoroutineScope(Dispatchers.IO).launch {
+            var service = getRetrofitInstance().create(ApiService::class.java)
+            val call: Response<List<Album>> = service.getAlbums("/albums")
+            println("On after call")
+            val response = call.body()
+            println("On after response")
+            //Return to main thread that draws the UI
+            Handler(Looper.getMainLooper()).post {
+                if (call.isSuccessful) {
+                    liveDataList.postValue(response)
+                } else {
+                    //println("##########################################################3")
+                    //liveDataList.postValue(emptyList())
+                }
+            }
 
-        call.enqueue(object : Callback<List<Album>> {
-            override fun onFailure(call: Call<List<Album>>, t: Throwable) {
-                liveDataList.postValue(emptyList())
-            }
-            override fun onResponse(call: Call<List<Album>>, response: Response<List<Album>>) {
-                liveDataList.postValue(response.body())
-            }
-        })
+            //call.enqueue(object : Callback<List<Album>> {
+            //    override fun onFailure(call: Call<List<Album>>, t: Throwable) {
+            //        liveDataList.postValue(emptyList())
+            //    }
+
+            //    override fun onResponse(call: Call<List<Album>>, response: Response<List<Album>>) {
+            //        liveDataList.postValue(response.body())
+            //    }
+            //})
+        }
     }
 
     fun getAlbum(liveDataList: MutableLiveData<Album>, id: Number) {
