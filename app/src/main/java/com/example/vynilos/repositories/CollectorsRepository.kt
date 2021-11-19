@@ -9,31 +9,14 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class CollectorsRepository(){
-    private var service = NetworkServiceAdapter.getRetrofitInstance().create(ApiService::class.java)
+    private var serviceAdapter = NetworkServiceAdapter()
 
     fun getCollectors(liveDataList: MutableLiveData<List<Collector>>) {
-        val call = service.getCollectors("/collectors")
-
-        call.enqueue(object : Callback<List<Collector>> {
-            override fun onFailure(call: Call<List<Collector>>, t: Throwable) {
-                liveDataList.postValue(emptyList())
-            }
-            override fun onResponse(call: Call<List<Collector>>, response: Response<List<Collector>>) {
-                liveDataList.postValue(response.body())
-            }
-        })
+        serviceAdapter.getCollectors(liveDataList)
     }
 
     fun getCollector(id: Number, liveDataList: MutableLiveData<Collector>) {
-        val call = service.getCollector("/collectors/$id")
+        serviceAdapter.getCollector(liveDataList, id)
 
-        call.enqueue(object : Callback<Collector> {
-            override fun onFailure(call: Call<Collector>, t: Throwable) {
-                //#Need to figureout how to handle error
-            }
-            override fun onResponse(call: Call<Collector>, response: Response<Collector>) {
-                liveDataList.postValue(response.body())
-            }
-        })
     }
 }
