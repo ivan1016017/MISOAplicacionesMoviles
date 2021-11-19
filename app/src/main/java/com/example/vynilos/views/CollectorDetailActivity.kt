@@ -16,7 +16,7 @@ class CollectorDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var collectorId = intent.getStringExtra("collectorId")
+        val collectorId = intent.getStringExtra("collectorId")
         if (collectorId != null) {
             initViewModel(collectorId.toInt())
         }

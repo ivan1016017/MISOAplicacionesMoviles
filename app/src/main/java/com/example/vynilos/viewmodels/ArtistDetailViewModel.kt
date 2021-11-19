@@ -6,12 +6,8 @@ import com.example.vynilos.models.Artist
 import com.example.vynilos.repositories.ArtistsRepository
 
 class ArtistDetailViewModel : ViewModel() {
-    lateinit var liveData: MutableLiveData<Artist>
+    private var liveData: MutableLiveData<Artist> = MutableLiveData()
     private val artistRepository = ArtistsRepository()
-
-    init {
-        liveData = MutableLiveData()
-    }
 
     fun getLiveDataObserver(): MutableLiveData<Artist> {
         return liveData

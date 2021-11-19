@@ -36,8 +36,8 @@ class CollectorAdapter : RecyclerView.Adapter<CollectorAdapter.CollectorHolder>(
     }
 
     override fun getItemCount(): Int {
-        if(collectors == null) return 0
-        else return collectors?.size!!
+        return if(collectors == null) 0
+        else collectors?.size!!
     }
 
     class CollectorHolder(view: View) : RecyclerView.ViewHolder(view) {

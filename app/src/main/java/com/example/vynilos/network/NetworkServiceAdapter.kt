@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class NetworkServiceAdapter {
    companion object {
-        val BASE_URL = "https://grupo-11-android.herokuapp.com/"
+        private const val BASE_URL = "https://grupo-11-android.herokuapp.com/"
 
         fun getRetrofitInstance(): Retrofit {
             return Retrofit.Builder().
@@ -29,7 +29,7 @@ class NetworkServiceAdapter {
 
     fun getAlbums(liveDataList: MutableLiveData<List<Album>>) {
         CoroutineScope(Dispatchers.IO).launch {
-            var service = getRetrofitInstance().create(ApiService::class.java)
+            val service = getRetrofitInstance().create(ApiService::class.java)
             val call = service.getAlbums("/albums")
 
             call.enqueue(object : Callback<List<Album>> {
@@ -51,8 +51,8 @@ class NetworkServiceAdapter {
 
     fun getAlbum(liveDataList: MutableLiveData<Album>, id: Number) {
         CoroutineScope(Dispatchers.IO).launch {
-            var service = getRetrofitInstance().create(ApiService::class.java)
-            val call = service.getAlbum("/albums/" + id)
+            val service = getRetrofitInstance().create(ApiService::class.java)
+            val call = service.getAlbum("/albums/$id")
 
             call.enqueue(object : Callback<Album> {
                 override fun onFailure(call: Call<Album>, t: Throwable) {
@@ -70,7 +70,7 @@ class NetworkServiceAdapter {
 
     fun getArtists(liveDataList: MutableLiveData<List<Artist>>) {
         CoroutineScope(Dispatchers.IO).launch {
-            var service = getRetrofitInstance().create(ApiService::class.java)
+            val service = getRetrofitInstance().create(ApiService::class.java)
             val call = service.getArtists("/bands")
 
             call.enqueue(object : Callback<List<Artist>> {
@@ -89,7 +89,7 @@ class NetworkServiceAdapter {
 
     fun getArtist(liveDataList: MutableLiveData<Artist>, id: Number) {
         CoroutineScope(Dispatchers.IO).launch {
-            var service = getRetrofitInstance().create(ApiService::class.java)
+            val service = getRetrofitInstance().create(ApiService::class.java)
             val call = service.getArtist("/bands/$id")
 
             call.enqueue(object : Callback<Artist> {
@@ -108,7 +108,7 @@ class NetworkServiceAdapter {
 
     fun getCollectors(liveDataList: MutableLiveData<List<Collector>>) {
         CoroutineScope(Dispatchers.IO).launch {
-            var service = getRetrofitInstance().create(ApiService::class.java)
+            val service = getRetrofitInstance().create(ApiService::class.java)
             val call = service.getCollectors("/collectors")
 
             call.enqueue(object : Callback<List<Collector>> {
@@ -129,7 +129,7 @@ class NetworkServiceAdapter {
 
     fun getCollector(liveDataList: MutableLiveData<Collector>, id: Number) {
         CoroutineScope(Dispatchers.IO).launch {
-            var service = getRetrofitInstance().create(ApiService::class.java)
+            val service = getRetrofitInstance().create(ApiService::class.java)
 
             val call = service.getCollector("/collectors/$id")
 

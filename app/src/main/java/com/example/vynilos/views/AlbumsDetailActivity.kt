@@ -19,7 +19,7 @@ class AlbumsDetailActivity: AppCompatActivity() {
         binding = ActivityDetailAlbumBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var albumId = intent.getStringExtra("albumId")
+        val albumId = intent.getStringExtra("albumId")
         if (albumId != null) {
             initViewModel(albumId.toInt())
         }

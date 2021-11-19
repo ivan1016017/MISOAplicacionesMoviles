@@ -17,7 +17,7 @@ class ArtistDetailActivity: AppCompatActivity() {
         binding = ActivityArtistsDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var artistId = intent.getStringExtra("artistId")
+        val artistId = intent.getStringExtra("artistId")
         if (artistId != null) {
             initViewModel(artistId.toInt())
         }

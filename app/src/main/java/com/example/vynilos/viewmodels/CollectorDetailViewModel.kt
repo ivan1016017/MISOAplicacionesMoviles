@@ -6,12 +6,8 @@ import com.example.vynilos.models.Collector
 import com.example.vynilos.repositories.CollectorsRepository
 
 class CollectorDetailViewModel : ViewModel() {
-    lateinit var liveData: MutableLiveData<Collector>
+    private var liveData: MutableLiveData<Collector> = MutableLiveData()
     private val collectorRepository = CollectorsRepository()
-
-    init {
-        liveData = MutableLiveData()
-    }
 
     fun getLiveDataObserver(): MutableLiveData<Collector> {
         return liveData

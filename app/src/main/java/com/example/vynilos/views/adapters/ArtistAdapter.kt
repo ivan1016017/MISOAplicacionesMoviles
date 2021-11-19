@@ -30,8 +30,8 @@ class ArtistAdapter : RecyclerView.Adapter<ArtistAdapter.ArtistHolder>(){
     }
 
     override fun getItemCount(): Int {
-        if(artists == null) return 0
-        else return artists?.size!!
+        return if(artists == null) 0
+        else artists?.size!!
     }
 
     class ArtistHolder(view: View) : RecyclerView.ViewHolder(view) {

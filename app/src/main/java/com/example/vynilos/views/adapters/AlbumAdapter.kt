@@ -31,8 +31,8 @@ class AlbumAdapter : RecyclerView.Adapter<AlbumAdapter.AlbumHolder>() {
     }
 
     override fun getItemCount(): Int {
-        if(albums == null) return 0
-        else return albums?.size!!
+        return if(albums == null) 0
+        else albums?.size!!
     }
 
     class AlbumHolder(view: View) : RecyclerView.ViewHolder(view) {
