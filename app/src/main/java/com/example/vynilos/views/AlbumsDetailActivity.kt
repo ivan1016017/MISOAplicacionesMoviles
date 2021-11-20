@@ -34,7 +34,7 @@ class AlbumsDetailActivity: AppCompatActivity() {
             binding.title.text = it.name
             binding.tvDescription.text = it.description
             binding.gender.text = it.genre
-            binding.date.text = it.releaseDate
+            binding.date.text = it.parsedReleaseDate()
             Picasso.get().load(it.cover).into(binding.ivCover)
         })
 
