@@ -40,7 +40,7 @@ class CollectorAdapter : RecyclerView.Adapter<CollectorAdapter.CollectorHolder>(
         fun bind(collector: Collector){
             binding.tvCollectorName.text = collector.name
             binding.tvTelephone.text = collector.telephone
-            Picasso.get().load(collector.image).into(binding.ivCollectorCover)
+            binding.tvEmail.text = collector.email
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, CollectorDetailActivity::class.java)

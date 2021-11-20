@@ -41,7 +41,9 @@ class CollectorDetailActivity : AppCompatActivity() {
         val viewModel = ViewModelProvider(this).get(CollectorDetailViewModel::class.java)
         viewModel.getLiveDataObserver().observe(this, {
             binding.tvCollectorName.text = it.name
-            Picasso.get().load(it.image).into(binding.imageView)
+            binding.tvCollectorEmail.text = it.email
+            binding.tvCollectorPhone.text = it.telephone
+            Picasso.get().load("https://www.ipcc.ch/site/assets/uploads/sites/3/2019/10/img-placeholder.png").into(binding.imageView)
         })
         viewModel.makeApiCall(albumId)
     }
