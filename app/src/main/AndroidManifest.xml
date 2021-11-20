@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vynilos">
         <activity
-
+            android:name=".views.CollectorDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.ArtistDetailActivity"
+            android:exported="true" />
+        <activity
             android:name=".views.CollectorsActivity"
             android:exported="false" />
         <activity

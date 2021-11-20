@@ -12,5 +12,11 @@
     <string name="collector_menu_text">Catalogo de coleccionistas</string>
     <string name="create_album_menu_text">Crear album</string>
     <string name="description_Row">GOBACKROWIMAGE</string>
+    <string name="birthday">Fecha creacion de la banda</string>
+    <string name="collector_subtitle">Coleccionista destacado</string>
+    <string name="description_label">Descripción</string>
+    <string name="todo_collector_detail">
+      TODO: Comments List
+    </string>
 </resources>
 
