@@ -1,16 +1,4 @@
 <div id="top"></div>
-<<<<<<< HEAD
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-<!-- PROJECT LOGO -->
-=======
->>>>>>> main
 <br />
 <div align="center">
   <a href="https://github.com/ivan1016017/MISOAplicacionesNube">
@@ -36,12 +24,14 @@ La documentación completa del proyecto se encuentra en la [Wiki](https://github
 ## Instalación del aplicativo
 ### Sprint 1
 En la raiz del proyecto se encuentra el archivo ```vinilos_sprint_1.apk```, el cual debe ser instalado en cualquier dispositivo con versión Android  Lollipop 5.0 o superior.
+### Sprint 2
+En la raiz del proyecto se encuentra el archivo ```vinilos_sprint_2.apk```, el cual debe ser instalado en cualquier dispositivo con versión Android  Lollipop 5.0 o superior
 
 <!-- ABOUT THE PROJECT -->
 ## Pruebas automatizadas Espresso
 **Importante:** Antes de ejecutar las pruebas se recomienda visitar el endpoint [https://grupo-11-android.herokuapp.com/](https://grupo-11-android.herokuapp.com/), de esta forma nos aseguramos que el aplicativo no espere a que Heroku inicie el serivico.
 
-### Sprint 1
+### Sprint 1 y 2
 Se recomienda ejecutar las pruebas en un emulador PIXEL XL con API 22
 
 Para ejecutar las 4 pruebas Espresso E2E ir a la carpeta app > java, dar click derecho en el paquete ```com.examples.vynilos(androidTest)``` y seleccionar ```Run Tests in ``` 
@@ -57,6 +47,15 @@ Video prueba manual de aceptación en dispositivo **HUAWEI Y7 - Android 7.0**:
 
 Video prueba manual de aceptación en dispositivo **Xiaomi REDMI 9 - Android 10.0**: 
 [https://youtu.be/lOmypBVO8MI](https://youtu.be/lOmypBVO8MI) 
+
+### Sprint 2
+Video prueba manual de aceptación en dispositivo **HUAWEI Y7 - Android 7.0**: 
+[https://youtu.be/URW2IhV3FpQ](https://youtu.be/URW2IhV3FpQ) 
+
+Video prueba manual de aceptación en dispositivo **Xiaomi REDMI 9 - Android 10.0**: 
+[https://youtu.be/Vl0WGG4rvCs](https://youtu.be/Vl0WGG4rvCs) 
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
