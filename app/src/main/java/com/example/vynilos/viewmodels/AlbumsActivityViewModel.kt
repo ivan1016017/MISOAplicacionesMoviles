@@ -6,13 +6,9 @@ import androidx.lifecycle.ViewModel
 import com.example.vynilos.models.Album
 import com.example.vynilos.repositories.AlbumRepository
 
-class AlbumsActivityViewModel(): ViewModel() {
-    lateinit var liveDataList: MutableLiveData<List<Album>>
+class AlbumsActivityViewModel : ViewModel() {
+    private var liveDataList: MutableLiveData<List<Album>> = MutableLiveData()
     private val albumsRepository = AlbumRepository()
-
-    init {
-        liveDataList = MutableLiveData()
-    }
 
     fun getLiveDataObserver(): MutableLiveData<List<Album>> {
         return liveDataList

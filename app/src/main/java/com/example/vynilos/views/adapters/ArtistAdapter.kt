@@ -1,21 +1,18 @@
 package com.example.vynilos.views.adapters
 
-import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vynilos.R
 import com.example.vynilos.databinding.ItemArtistBinding
-import com.example.vynilos.models.Album
 import com.example.vynilos.models.Artist
+import com.example.vynilos.views.ArtistDetailActivity
 import com.squareup.picasso.Picasso
 
 
-class ArtistAdapter (): RecyclerView.Adapter<ArtistAdapter.ArtistHolder>(){
+class ArtistAdapter : RecyclerView.Adapter<ArtistAdapter.ArtistHolder>(){
     private var artists : List<Artist>? = null
 
     override fun onBindViewHolder(holder: ArtistHolder, position: Int) {
@@ -33,8 +30,8 @@ class ArtistAdapter (): RecyclerView.Adapter<ArtistAdapter.ArtistHolder>(){
     }
 
     override fun getItemCount(): Int {
-        if(artists == null) return 0
-        else return artists?.size!!
+        return if(artists == null) 0
+        else artists?.size!!
     }
 
     class ArtistHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -44,7 +41,12 @@ class ArtistAdapter (): RecyclerView.Adapter<ArtistAdapter.ArtistHolder>(){
             binding.tvArtistName.text = artist.name
             binding.tvArtistDescription.text = artist.description
             Picasso.get().load(artist.image).into(binding.ivArtistImage)
-            //itemView.setOnClickListener(View.OnClickListener { Toast.makeText(context, "Clicked on $artist.name", Toast.LENGTH_SHORT).show() })
+
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, ArtistDetailActivity::class.java)
+                intent.putExtra("artistId", artist.id.toString())
+                itemView.context.startActivity(intent)
+            }
         }
     }
 
