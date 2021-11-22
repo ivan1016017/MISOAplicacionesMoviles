@@ -1,18 +1,13 @@
 package com.example.vynilos.views
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import com.example.vynilos.R
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.vynilos.views.adapters.ArtistAdapter
+import com.example.vynilos.R
 import com.example.vynilos.databinding.ActivityArtistsBinding
 import com.example.vynilos.viewmodels.ArtistsActivityViewModel
-import androidx.lifecycle.Observer
-import com.example.vynilos.MainActivity
+import com.example.vynilos.views.adapters.ArtistAdapter
 
 
 class ArtistsActivity:AppCompatActivity() {
@@ -49,15 +44,11 @@ class ArtistsActivity:AppCompatActivity() {
 
     private fun initViewModel() {
         val viewModel = ViewModelProvider(this).get(ArtistsActivityViewModel::class.java)
-        viewModel.getLiveDataObserver().observe(this, Observer {
+        viewModel.getLiveDataObserver().observe(this, {
             adapter.setAlbums(it)
             adapter.notifyDataSetChanged()
         })
         viewModel.makeApiCall()
-    }
-
-    private fun showError() {
-        Toast.makeText(this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show()
     }
 
 

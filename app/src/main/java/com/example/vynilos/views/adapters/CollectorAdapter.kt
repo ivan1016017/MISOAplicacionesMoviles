@@ -1,24 +1,18 @@
 package com.example.vynilos.views.adapters
 
 
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vynilos.R
 import com.example.vynilos.databinding.ItemCollectorBinding
 import com.example.vynilos.models.Collector
-import com.example.vynilos.views.AlbumsDetailActivity
 import com.example.vynilos.views.CollectorDetailActivity
-
 import com.squareup.picasso.Picasso
 
-class CollectorAdapter (): RecyclerView.Adapter<CollectorAdapter.CollectorHolder>(){
+class CollectorAdapter : RecyclerView.Adapter<CollectorAdapter.CollectorHolder>(){
     private var collectors : List<Collector>? = null
 
     override fun onBindViewHolder(holder: CollectorHolder, position: Int) {
@@ -36,8 +30,8 @@ class CollectorAdapter (): RecyclerView.Adapter<CollectorAdapter.CollectorHolder
     }
 
     override fun getItemCount(): Int {
-        if(collectors == null) return 0
-        else return collectors?.size!!
+        return if(collectors == null) 0
+        else collectors?.size!!
     }
 
     class CollectorHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -46,7 +40,7 @@ class CollectorAdapter (): RecyclerView.Adapter<CollectorAdapter.CollectorHolder
         fun bind(collector: Collector){
             binding.tvCollectorName.text = collector.name
             binding.tvTelephone.text = collector.telephone
-            Picasso.get().load(collector.image).into(binding.ivCollectorCover)
+            binding.tvEmail.text = collector.email
 
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, CollectorDetailActivity::class.java)

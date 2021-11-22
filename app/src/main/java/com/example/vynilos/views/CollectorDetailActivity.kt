@@ -1,10 +1,8 @@
 package com.example.vynilos.views
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
-import androidx.activity.viewModels
-import androidx.lifecycle.Observer
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.vynilos.databinding.ActivityCollectorDetailBinding
 import com.example.vynilos.viewmodels.CollectorDetailViewModel
@@ -16,7 +14,7 @@ class CollectorDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        var collectorId = intent.getStringExtra("collectorId")
+        val collectorId = intent.getStringExtra("collectorId")
         if (collectorId != null) {
             initViewModel(collectorId.toInt())
         }
@@ -41,9 +39,11 @@ class CollectorDetailActivity : AppCompatActivity() {
 
     private fun initViewModel(albumId: Number ) {
         val viewModel = ViewModelProvider(this).get(CollectorDetailViewModel::class.java)
-        viewModel.getLiveDataObserver().observe(this, Observer {
+        viewModel.getLiveDataObserver().observe(this, {
             binding.tvCollectorName.text = it.name
-            Picasso.get().load(it.image).into(binding.imageView)
+            binding.tvCollectorEmail.text = it.email
+            binding.tvCollectorPhone.text = it.telephone
+            Picasso.get().load("https://www.ipcc.ch/site/assets/uploads/sites/3/2019/10/img-placeholder.png").into(binding.imageView)
         })
         viewModel.makeApiCall(albumId)
     }

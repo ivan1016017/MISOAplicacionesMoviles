@@ -15,11 +15,8 @@
     <string name="birthday">Fecha creacion de la banda</string>
     <string name="collector_subtitle">Coleccionista destacado</string>
     <string name="description_label">Descripción</string>
-    <string name="lorem_ipsum">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis iaculis erat nec sollicitudin. Quisque ut porttitor lectus. Quisque feugiat quis velit et vestibulum. Sed ultricies egestas velit vel dignissim. Maecenas mattis porta vehicula. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis sem dui, euismod id metus sit amet, porta fermentum massa. Cras malesuada nunc eu tellus volutpat, nec sagittis mauris tristique. Sed venenatis cursus arcu et rutrum. Maecenas vestibulum nibh eu lectus rhoncus, sed sagittis ipsum pellentesque. Ut nec molestie velit, sed aliquam enim. Aenean interdum lobortis enim sed rutrum.
-        Sed eu justo cursus, mollis sapien id, aliquam dui. Etiam vel felis fermentum orci bibendum posuere ut vel augue. Nullam et mauris justo. Sed sodales eu ipsum at interdum. Aenean convallis, ligula sit amet mattis dictum, lorem mi convallis justo, sed suscipit justo lectus tristique eros. Fusce tristique fringilla orci sed tempus. Phasellus neque libero, lacinia et purus at, aliquam posuere augue. Quisque et ullamcorper velit.
-        Quisque quis est at velit viverra molestie id ac justo. Curabitur quis ultricies odio. Donec a elementum enim, iaculis efficitur tellus. Praesent tincidunt dignissim enim, a pharetra tortor tincidunt condimentum. Integer erat quam, aliquet hendrerit vehicula et, cursus id mi. Maecenas gravida massa sed magna tristique accumsan. Vivamus arcu leo, aliquet id aliquet a, finibus vitae quam. Donec sodales venenatis enim ut sagittis. Nullam quis erat justo. Sed volutpat rutrum tellus a cursus. Curabitur facilisis eros sed elit fringilla varius. Nam in risus non ligula tincidunt interdum. Praesent non dui id neque eleifend posuere.
-        Quisque mollis eleifend nulla, a eleifend dolor viverra nec. Aenean tempor leo felis, quis facilisis justo faucibus eget. Vestibulum a sapien volutpat, venenatis ipsum at, vehicula purus. Vivamus in nulla vel quam maximus porta. Morbi imperdiet vestibulum finibus. Mauris lobortis volutpat lacus ac auctor. Praesent tincidunt lacus quis varius vestibulum. Nulla facilisi. Donec pellentesque elit et orci fermentum blandit. Maecenas non convallis ipsum, vitae euismod risus. In a porttitor leo. Sed massa ligula, facilisis et fringilla sed, venenatis vitae diam. Praesent tristique laoreet lacus vitae auctor. Quisque tortor magna, venenatis eu maximus eu, gravida ac dui.
+    <string name="todo_collector_detail">
+      TODO: Comments List
     </string>
 </resources>
 

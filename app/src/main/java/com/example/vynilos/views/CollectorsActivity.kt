@@ -1,18 +1,16 @@
 package com.example.vynilos.views
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
-import androidx.lifecycle.Observer
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vynilos.MainActivity
 import com.example.vynilos.R
-import com.example.vynilos.views.adapters.CollectorAdapter
 import com.example.vynilos.databinding.ActivityCollectorsBinding
 import com.example.vynilos.viewmodels.CollectorsActivityViewModel
+import com.example.vynilos.views.adapters.CollectorAdapter
 
 class CollectorsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCollectorsBinding
@@ -47,15 +45,11 @@ class CollectorsActivity : AppCompatActivity() {
 
     private fun initViewModel() {
         val viewModel = ViewModelProvider(this).get(CollectorsActivityViewModel::class.java)
-        viewModel.getLiveDataObserver().observe(this, Observer {
+        viewModel.getLiveDataObserver().observe(this, {
             adapter.setCollectors(it)
             adapter.notifyDataSetChanged()
         })
         viewModel.makeApiCall()
-    }
-
-    private fun showError() {
-        Toast.makeText(this, "Ha ocurrido un error", Toast.LENGTH_SHORT).show()
     }
 
     private fun goToMainView(view: View) {
