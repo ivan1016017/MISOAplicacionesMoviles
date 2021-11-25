@@ -1,8 +1,12 @@
 package com.example.vynilos.views
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.example.vynilos.R
 import com.example.vynilos.databinding.ActivityDetailAlbumBinding
 import com.example.vynilos.viewmodels.AlbumDetailViewModel
 import com.squareup.picasso.Picasso
@@ -20,6 +24,20 @@ class AlbumsDetailActivity: AppCompatActivity() {
             initViewModel(albumId.toInt())
         }
         handleBackClick()
+        bindAlbumDetailEvents()
+    }
+
+    private fun bindAlbumDetailEvents() {
+        val trackTiedToAlbumButton: Button = findViewById(R.id.btn_tie_track_to_album)
+        trackTiedToAlbumButton.setOnClickListener { view ->
+            openTrackTiedToAlbumView(view)
+        }
+    }
+
+    private fun openTrackTiedToAlbumView(view: View) {
+        val intent = Intent(this, AlbumsTracksActivity::class.java).apply {
+        }
+        startActivity(intent)
     }
 
     private fun handleBackClick() {

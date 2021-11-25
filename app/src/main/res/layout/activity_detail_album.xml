@@ -89,7 +89,7 @@
             android:layout_margin="15dp"
             android:text="@string/detail_album_description"
             android:textColor="@color/white"
-            android:textSize="21sp"/>
+            android:textSize="21sp" />
 
         <TextView
             android:id="@+id/tvDescription"
@@ -98,10 +98,10 @@
             android:layout_below="@id/descriptionText"
             android:layout_margin="15dp"
             android:textColor="@color/white"
-            tools:text="Lorem ipsum dolor sitor nec elit. Mauris lobortis, lorem eu imperdiet egestas, neque ex tristique dui, et blandit orci lacus vitae nunc. Morbi congue lacus ac nisi laoreet, ac gravida mi facilisis. Nullam vulputate dui est, eget luctus turpis posuere vitae. Integer elementum erat in urna sollicitudin ullamcorper. Donec egestas tincidunt lectus, et convallis velit. Donec venenatis risus odio, nec consectetur purus faucibus non. Curabitur scelerisque neque eu enim pulvinar tempor."/>
+            tools:text="Lorem ipsum dolor sitor nec elit. Mauris lobortis, lorem eu imperdiet egestas, neque ex tristique dui, et blandit orci lacus vitae nunc. Morbi congue lacus ac nisi laoreet, ac gravida mi facilisis. Nullam vulputate dui est, eget luctus turpis posuere vitae. Integer elementum erat in urna sollicitudin ullamcorper. Donec egestas tincidunt lectus, et convallis velit. Donec venenatis risus odio, nec consectetur purus faucibus non. Curabitur scelerisque neque eu enim pulvinar tempor." />
 
         <Button
-            android:id="@+id/tie_track_to_album"
+            android:id="@+id/btn_tie_track_to_album"
             android:layout_width="256dp"
             android:layout_height="72dp"
             android:layout_above="@+id/tvDescription"
