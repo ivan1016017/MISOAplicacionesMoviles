@@ -15,6 +15,7 @@
     <string name="birthday">Fecha creacion de la banda</string>
     <string name="collector_subtitle">Coleccionista destacado</string>
     <string name="description_label">Descripción</string>
+    <string name="tie_track_to_album">Asociar cancion al album</string>
     <string name="todo_collector_detail">
       TODO: Comments List
     </string>

@@ -99,5 +99,19 @@
             android:layout_margin="15dp"
             android:textColor="@color/white"
             tools:text="Lorem ipsum dolor sitor nec elit. Mauris lobortis, lorem eu imperdiet egestas, neque ex tristique dui, et blandit orci lacus vitae nunc. Morbi congue lacus ac nisi laoreet, ac gravida mi facilisis. Nullam vulputate dui est, eget luctus turpis posuere vitae. Integer elementum erat in urna sollicitudin ullamcorper. Donec egestas tincidunt lectus, et convallis velit. Donec venenatis risus odio, nec consectetur purus faucibus non. Curabitur scelerisque neque eu enim pulvinar tempor."/>
+
+        <Button
+            android:id="@+id/tie_track_to_album"
+            android:layout_width="256dp"
+            android:layout_height="72dp"
+            android:layout_above="@+id/tvDescription"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="-11dp"
+            android:layout_toEndOf="@+id/descriptionText"
+            android:text="@string/tie_track_to_album" />
     </RelativeLayout>
 </RelativeLayout>
