@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Vynilos">
         <activity
             android:name=".views.AlbumsTracksActivity"
+        android:exported="false" />
+        <activity
+            android:name=".views.CreateAlbumActivity"
             android:exported="false" />
         <activity
             android:name=".views.CollectorDetailActivity"

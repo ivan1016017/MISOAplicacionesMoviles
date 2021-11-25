@@ -8,6 +8,7 @@ import android.widget.Button
 import com.example.vynilos.views.AlbumsActivity
 import com.example.vynilos.views.ArtistsActivity
 import com.example.vynilos.views.CollectorsActivity
+import com.example.vynilos.views.CreateAlbumActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +32,11 @@ class MainActivity : AppCompatActivity() {
         collectorsMenuButton.setOnClickListener { view ->
             openCollectorListView(view)
         }
+
+        val createAlbumMenuButton: Button = findViewById(R.id.btn_create_album)
+        createAlbumMenuButton.setOnClickListener { view ->
+            openCreateAlbumView(view)
+        }
     }
 
     private fun openAlbumListView(view: View) {
@@ -47,6 +53,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun openCollectorListView(view: View) {
         val intent = Intent(this, CollectorsActivity::class.java).apply {
+        }
+        startActivity(intent)
+    }
+
+    private fun openCreateAlbumView(view: View) {
+        val intent = Intent(this, CreateAlbumActivity::class.java).apply {
         }
         startActivity(intent)
     }
