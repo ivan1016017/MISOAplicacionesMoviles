@@ -14,10 +14,17 @@ class AlbumsTracksActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setToolbarText()
+        handleBackClick()
     }
 
     private fun setToolbarText() {
         binding.toolbar.toolbarText.text = getString(R.string.tie_track_to_album)
+    }
+
+    private fun handleBackClick() {
+        binding.toolbar.leftIcon.setOnClickListener { view ->
+            this.finish()
+        }
     }
 
 }
