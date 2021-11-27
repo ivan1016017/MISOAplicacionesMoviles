@@ -40,6 +40,7 @@ class NetworkServiceAdapter {
                 }
                 override fun onResponse(call: Call<List<Album>>, response: Response<List<Album>>) {
                     //Return to main thread that draws the UI
+
                     Handler(Looper.getMainLooper()).post {
                         liveDataList.postValue(response.body())
                     }

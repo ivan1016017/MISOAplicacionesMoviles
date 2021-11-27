@@ -16,11 +16,13 @@
         <entry key="app/src/main/res/layout/activity_artists.xml" value="0.25407608695652173" />
         <entry key="app/src/main/res/layout/activity_artists_detail.xml" value="0.35885416666666664" />
         <entry key="app/src/main/res/layout/activity_collector_detail.xml" value="0.2617753623188406" />
+        <entry key="app/src/main/res/layout/activity_create_album.xml" value="0.129981884057971" />
         <entry key="app/src/main/res/layout/activity_detail_album.xml" value="0.35885416666666664" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19882246376811594" />
         <entry key="app/src/main/res/layout/app_image.xml" value="0.1" />
         <entry key="app/src/main/res/layout/item_album.xml" value="0.20471014492753623" />
         <entry key="app/src/main/res/layout/item_collector.xml" value="0.2617753623188406" />
+        <entry key="app/src/main/res/layout/spinner_item.xml" value="0.10989583333333333" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/toolbar_artist.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/toolbar_description.xml" value="0.35572916666666665" />
