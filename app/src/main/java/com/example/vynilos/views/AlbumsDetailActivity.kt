@@ -72,6 +72,8 @@ class AlbumsDetailActivity: AppCompatActivity() {
     private fun initViewModel(albumId: Number ) {
         val viewModel = ViewModelProvider(this).get(AlbumDetailViewModel::class.java)
         viewModel.getLiveDataObserver().observe(this, {
+            adapter.setTracks(it.tracks.toList())
+            adapter.notifyDataSetChanged()
             for (item in it.tracks) println(item.name)
             binding.title.text = it.name
             binding.tvDescription.text = it.description
