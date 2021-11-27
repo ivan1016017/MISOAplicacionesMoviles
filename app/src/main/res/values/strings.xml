@@ -19,6 +19,7 @@
     <string name="tie_track">Asociar cancion</string>
     <string name="track_name_hint">Nombre de la cancion</string>
     <string name="track_duration_hint">Duracion de la cancion</string>
+    <string name="track_id">Id para la cancion</string>
     <string name="todo_collector_detail">
       TODO: Comments List
     </string>

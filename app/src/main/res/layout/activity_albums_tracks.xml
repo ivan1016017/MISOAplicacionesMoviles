@@ -19,6 +19,7 @@
         android:layout_height="60dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/track_name_hint" />
@@ -33,13 +34,14 @@
         android:layout_height="60dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_duration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/track_duration_hint" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_create_tie_track_to_album"
 
         android:layout_width="360dp"
         android:layout_height="wrap_content"

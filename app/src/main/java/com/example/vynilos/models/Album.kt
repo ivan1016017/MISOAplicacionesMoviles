@@ -2,6 +2,7 @@ package com.example.vynilos.models
 
 import android.content.pm.SigningInfo
 import java.text.SimpleDateFormat
+import com.example.vynilos.models.Track
 
 class Album (
     val id:Number,
@@ -10,7 +11,8 @@ class Album (
     val releaseDate:String,
     val description:String,
     val genre:String,
-    val recordLabel:String
+    val recordLabel:String,
+    val tracks: Array<Track>
 ) {
 
 

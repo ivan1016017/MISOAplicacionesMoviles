@@ -4,10 +4,12 @@ import com.example.vynilos.models.Artist
 import com.example.vynilos.models.Album
 
 import com.example.vynilos.models.Collector
+import com.example.vynilos.models.Track
+import okhttp3.RequestBody
+import okhttp3.ResponseBody
 
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Url
+import retrofit2.http.*
 
 interface ApiService {
     @GET
@@ -27,4 +29,7 @@ interface ApiService {
 
     @GET
     fun getCollector(@Url url:String):Call<Collector>
+
+    @POST
+    fun createTrackToAlbum(@Url url:String, @Body track: Track): Call<Track>
 }
