@@ -17,7 +17,6 @@ import org.json.JSONObject
 class AlbumsTracksActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAlbumsTracksBinding
     private var serviceAdapter = NetworkServiceAdapter()
-    private lateinit var adapter: AlbumAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,14 +39,6 @@ class AlbumsTracksActivity : AppCompatActivity() {
             val durationTxt : TextInputEditText = findViewById(R.id.txt_duration)
             val name = nameTxt.text.toString()
             val duration = durationTxt.text.toString()
-
-            val postParams = mapOf<String, Any>(
-                "name" to nameTxt.text.toString(),
-                "duration" to durationTxt.text.toString(),
-            )
-            println(name)
-            println(duration)
-            println(toNumberAlbumId)
             createTrackToAlbum(name, duration, toNumberAlbumId)
             this.finish()
         }
