@@ -62,13 +62,6 @@ class AlbumsDetailActivity: AppCompatActivity() {
         binding.rvTracks.adapter = adapter
     }
 
-//    private fun bind(track: Track){
-//        val binding = ItemTrackBinding.bind(view: View)
-//        binding.tvTrackName.text = track.name
-//        binding.tvTrackDuration.text = track.duration
-//
-//    }
-
     private fun initViewModel(albumId: Number ) {
         val viewModel = ViewModelProvider(this).get(AlbumDetailViewModel::class.java)
         viewModel.getLiveDataObserver().observe(this, {

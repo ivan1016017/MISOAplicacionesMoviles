@@ -7,10 +7,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vynilos.R
 import com.example.vynilos.databinding.ItemTrackBinding
-import com.example.vynilos.models.Album
 import com.example.vynilos.models.Track
-import com.example.vynilos.views.AlbumsDetailActivity
-import com.squareup.picasso.Picasso
+
 
 class TrackAdapter : RecyclerView.Adapter<TrackAdapter.TrackHolder>() {
     private var tracks : List<Track>? = null
@@ -41,12 +39,6 @@ class TrackAdapter : RecyclerView.Adapter<TrackAdapter.TrackHolder>() {
             binding.tvTrackName.text = track.name
             binding.tvTrackDuration.text = track.duration
 
-
-//            itemView.setOnClickListener {
-//                val intent = Intent(itemView.context, AlbumsDetailActivity::class.java)
-//                intent.putExtra("albumId", album.id.toString())
-//                itemView.context.startActivity(intent)
-//            }
         }
     }
 }
