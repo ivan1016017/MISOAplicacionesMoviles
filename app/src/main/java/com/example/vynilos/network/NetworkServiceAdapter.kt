@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.vynilos.models.Album
 import com.example.vynilos.models.Artist
 import com.example.vynilos.models.Collector
+import com.example.vynilos.models.Track
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -147,4 +148,30 @@ class NetworkServiceAdapter {
             })
         }
     }
+
+    fun createTrackToAlbum(name: String, duration: String, id: Number) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val service = getRetrofitInstance().create(ApiService::class.java)
+            val track = Track(name = name, duration = duration)
+
+            val call = service.createTrackToAlbum("/albums/$id/tracks",track)
+
+            call.enqueue(object : Callback<Track> {
+                override fun onFailure(call: Call<Track>, t: Throwable) {
+                    //#Need to figureout how to handle error
+                }
+
+                override fun onResponse(call: Call<Track>, response: Response<Track>) {
+//                    Handler(Looper.getMainLooper()).post {
+//                        liveDataList.postValue(response.body())
+//                    }
+                    val addedTrack = response.body()
+                    println(addedTrack)
+                }
+            })
+        }
+    }
+
+
+
 }
