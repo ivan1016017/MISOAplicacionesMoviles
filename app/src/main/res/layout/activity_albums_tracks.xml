@@ -16,13 +16,16 @@
         android:layout_marginTop="-100dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
+        android:textColorHint="@color/white"
         android:layout_height="60dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txt_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/track_name_hint" />
+            android:background="#000000"
+            android:hint="@string/track_name_hint"
+            android:textColor="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -31,18 +34,21 @@
         android:layout_marginTop="0dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
+        android:textColorHint="@color/white"
         android:layout_height="60dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txt_duration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/track_duration_hint" />
+            android:background="#000000"
+            android:hint="@string/track_duration_hint"
+            android:textColor="@color/white"
+             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_create_tie_track_to_album"
-
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
