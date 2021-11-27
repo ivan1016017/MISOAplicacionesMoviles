@@ -79,7 +79,7 @@
                 android:layout_marginRight="25dp"
                 android:text="@string/collector_menu_text" />
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/btn_create_album"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
