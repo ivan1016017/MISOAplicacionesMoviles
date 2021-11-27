@@ -153,7 +153,7 @@ class CreateAlbumActivity : AppCompatActivity() {
 
         if(isInvalidCover()) {
             valid = false
-            error_text = error_text + "Cover debe ser una URL correcta \n"
+            error_text = error_text + "La imágen del cover debe ser una URL correcta \n"
         }
 
         if(isInvalidDescription()) {
