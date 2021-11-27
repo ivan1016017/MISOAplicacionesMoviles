@@ -16,8 +16,9 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             tools:ignore="ScrollViewSize">
+
             <TextView
-                android:id="@+id/tvCollectorName"
+                android:id="@+id/tvTitle"
                 android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -32,26 +33,34 @@
                 app:layout_constraintVertical_bias="0.022" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tvSubTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:text="@string/create_album_subtitle"
-                android:textColor="#5E5C5C"
+                android:textColor="@color/grey"
                 android:textSize="18sp"
-                android:layout_marginBottom="20dp"
                 tools:layout_editor_absoluteX="71dp"
                 tools:layout_editor_absoluteY="72dp" />
 
             <TextView
+                android:id="@+id/tvErrors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text=""
+                android:textColor="@color/red_error"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_marginTop="20dp"
                 android:id="@+id/tvName"
                 android:textColor="@color/primary_color"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="Nombre del álbum" />
-
+                android:text="@string/nombre_del_lbum" />
             <EditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
@@ -64,6 +73,8 @@
                 app:backgroundTint="@color/secondary_purple"
                 android:layout_marginBottom="20dp"
                 />
+
+
             <TextView
                 android:id="@+id/tvCover"
                 android:textColor="@color/white"
@@ -71,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="Cover URL" />
+                android:text="@string/cover_url" />
 
             <EditText
                 android:id="@+id/etCover"
@@ -93,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="Genre" />
+                android:text="@string/genre" />
 
             <Spinner
                 android:id="@+id/genre_spinner"
@@ -113,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="Record label" />
+                android:text="@string/record_label" />
 
             <Spinner
                 android:id="@+id/record_label_spinner"
@@ -133,7 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="Release Date" />
+                android:text="@string/release_date" />
 
             <Button
                 android:id="@+id/datePickerButton"
@@ -154,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="Description" />
+                android:text="@string/descripcion" />
 
             <EditText
                 android:id="@+id/etDescription"
@@ -175,7 +186,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Guardar" />
+                android:text="@string/guardar" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

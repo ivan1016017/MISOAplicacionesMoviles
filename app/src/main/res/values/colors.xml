@@ -13,4 +13,6 @@
     <color name="secondary_purple">#7300e6</color>
     <color name="green">#5EEECB</color>
     <color name="blue_artist">#5B97F0</color>
+    <color name="grey">#5E5C5C</color>
+    <color name="red_error">#ED4337</color>
 </resources>

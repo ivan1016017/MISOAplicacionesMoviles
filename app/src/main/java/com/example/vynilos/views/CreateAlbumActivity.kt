@@ -33,6 +33,16 @@ class CreateAlbumActivity : AppCompatActivity() {
 
         setToolbarText()
         handleBackClick()
+        setSaveButton()
+    }
+
+    private fun setSaveButton() {
+        binding.saveBtn.setOnClickListener {
+            val is_valid = validateForm()
+            if(is_valid) {
+
+            }
+        }
     }
 
     private fun getTodaysDate(): String? {
@@ -117,18 +127,59 @@ class CreateAlbumActivity : AppCompatActivity() {
     }
 
     private fun getMonthFormat(month: Int): String? {
-        if (month == 1) return "JAN"
+        if (month == 1) return "ENE"
         if (month == 2) return "FEB"
         if (month == 3) return "MAR"
-        if (month == 4) return "APR"
+        if (month == 4) return "ABR"
         if (month == 5) return "MAY"
         if (month == 6) return "JUN"
         if (month == 7) return "JUL"
-        if (month == 8) return "AUG"
+        if (month == 8) return "AGO"
         if (month == 9) return "SEP"
         if (month == 10) return "OCT"
         if (month == 11) return "NOV"
-        return if (month == 12) "DEC" else "JAN"
+        return if (month == 12) "DIC" else "ENE"
     }
+
+    private fun validateForm(): Boolean {
+        var valid = true
+        var error_text = ""
+        binding.tvErrors.text = ""
+
+        if(isInvalidName()) {
+            valid = false
+            error_text = error_text + "Nombre del álbum requerido \n"
+        }
+
+        if(isInvalidCover()) {
+            valid = false
+            error_text = error_text + "Cover debe ser una URL correcta \n"
+        }
+
+        if(isInvalidDescription()) {
+            valid = false
+            error_text = error_text + "Descripción requerida \n"
+        }
+
+        if(!valid) {
+            binding.tvErrors.text = error_text
+        }
+
+        return valid
+    }
+
+    private fun isInvalidName():Boolean {
+        return binding.etName.text.isNullOrEmpty()
+    }
+
+    private fun isInvalidDescription():Boolean {
+        return binding.etDescription.text.isNullOrEmpty()
+    }
+
+    private fun isInvalidCover():Boolean {
+        val cover = binding.etCover.text
+        return cover.isNullOrEmpty() || !android.util.Patterns.WEB_URL.matcher(cover).matches()
+    }
+
 
 }
