@@ -4,20 +4,27 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.lifecycle.ViewModelProvider
 import com.example.vynilos.R
 import com.example.vynilos.databinding.ActivityAlbumsTracksBinding
 import com.example.vynilos.network.NetworkServiceAdapter
+import com.example.vynilos.viewmodels.AlbumDetailViewModel
+import com.example.vynilos.viewmodels.AlbumsActivityViewModel
+import com.example.vynilos.views.adapters.AlbumAdapter
 import com.google.android.material.textfield.TextInputEditText
 import org.json.JSONObject
 
 class AlbumsTracksActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAlbumsTracksBinding
     private var serviceAdapter = NetworkServiceAdapter()
+    private lateinit var adapter: AlbumAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAlbumsTracksBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val viewModel = ViewModelProvider(this).get(AlbumDetailViewModel::class.java)
         var toNumberAlbumId : Number = 0
         val albumId = intent.getStringExtra("albumId")
         if (albumId != null) {
@@ -31,7 +38,6 @@ class AlbumsTracksActivity : AppCompatActivity() {
         postButton.setOnClickListener {
             val nameTxt : TextInputEditText = findViewById(R.id.txt_name)
             val durationTxt : TextInputEditText = findViewById(R.id.txt_duration)
-
             val name = nameTxt.text.toString()
             val duration = durationTxt.text.toString()
 
@@ -39,20 +45,11 @@ class AlbumsTracksActivity : AppCompatActivity() {
                 "name" to nameTxt.text.toString(),
                 "duration" to durationTxt.text.toString(),
             )
-//            volleyBroker.instance.add(VolleyBroker.postRequest("collectors", JSONObject(postParams),
-//                Response.Listener<JSONObject> { response ->
-//                    // Display the first 500 characters of the response string.
-//                    postResultTextView.text = "Response is: ${response.toString()}"
-//                },
-//                Response.ErrorListener {
-//                    Log.d("TAG", it.toString())
-//                    postResultTextView.text = "That didn't work!"
-//                }
-//            ))
             println(name)
             println(duration)
             println(toNumberAlbumId)
             createTrackToAlbum(name, duration, toNumberAlbumId)
+            this.finish()
         }
 
     }
