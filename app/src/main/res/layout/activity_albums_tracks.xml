@@ -10,45 +10,55 @@
     <include android:id="@+id/toolbar" layout="@layout/toolbar" />
     <include layout="@layout/app_image" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <TextView
+        android:id="@+id/txt_name_title"
+        android:textColor="@color/white"
+        android:layout_marginTop="200dp"
         android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginTop="-100dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:textColorHint="@color/white"
-        android:layout_height="60dp">
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/track_name_hint" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txt_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#000000"
-            android:hint="@string/track_name_hint"
-            android:textColor="@color/white" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <EditText
+        android:id="@+id/txt_name"
         android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:textColorHint="@color/white"
-        android:layout_height="60dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:ems="10"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="start|top"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/secondary_purple"
+        android:inputType="textMultiLine" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txt_duration"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#000000"
-            android:hint="@string/track_duration_hint"
-            android:textColor="@color/white"
-             />
-    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/txt_duration_title"
+        android:textColor="@color/white"
+        android:layout_marginTop="310dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/track_duration_hint" />
+
+    <EditText
+        android:id="@+id/txt_duration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="340dp"
+        android:ems="10"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="start|top"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/secondary_purple"
+        android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/btn_create_tie_track_to_album"
+
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
