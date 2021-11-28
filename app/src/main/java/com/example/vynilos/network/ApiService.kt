@@ -5,8 +5,7 @@ import com.example.vynilos.models.Album
 
 import com.example.vynilos.models.Collector
 import com.example.vynilos.models.Track
-import okhttp3.RequestBody
-import okhttp3.ResponseBody
+import com.google.gson.JsonObject
 
 import retrofit2.Call
 import retrofit2.http.*
@@ -32,4 +31,7 @@ interface ApiService {
 
     @POST
     fun createTrackToAlbum(@Url url:String, @Body track: Track): Call<Track>
+
+    @POST
+    fun createAlbum(@Url url:String, @Body album: JsonObject): Call<Album>
 }
