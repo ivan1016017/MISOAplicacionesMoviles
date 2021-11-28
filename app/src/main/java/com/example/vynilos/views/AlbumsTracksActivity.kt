@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.example.vynilos.R
 import com.example.vynilos.databinding.ActivityAlbumsTracksBinding
@@ -35,8 +36,8 @@ class AlbumsTracksActivity : AppCompatActivity() {
         val postButton: Button = findViewById(R.id.btn_create_tie_track_to_album)
 
         postButton.setOnClickListener {
-            val nameTxt : TextInputEditText = findViewById(R.id.txt_name)
-            val durationTxt : TextInputEditText = findViewById(R.id.txt_duration)
+            val nameTxt : TextView = findViewById(R.id.txt_name)
+            val durationTxt : TextView = findViewById(R.id.txt_duration)
             val name = nameTxt.text.toString()
             val duration = durationTxt.text.toString()
             createTrackToAlbum(name, duration, toNumberAlbumId)

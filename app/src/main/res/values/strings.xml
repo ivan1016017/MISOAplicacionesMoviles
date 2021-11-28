@@ -21,6 +21,7 @@
     <string name="track_duration_hint">Duracion de la cancion</string>
     <string name="track_id">Id para la cancion</string>
     <string name="tracks">Tracks:</string>
+    <string name="add_song_to_album_title">Agregar cancion</string>
     <string name="todo_collector_detail">
       TODO: Comments List
     </string>

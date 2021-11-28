@@ -14,6 +14,7 @@ import com.example.vynilos.models.Track
 import com.example.vynilos.viewmodels.AlbumDetailViewModel
 import com.example.vynilos.views.adapters.AlbumAdapter
 import com.example.vynilos.views.adapters.TrackAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.squareup.picasso.Picasso
 
 class AlbumsDetailActivity: AppCompatActivity() {
@@ -37,7 +38,7 @@ class AlbumsDetailActivity: AppCompatActivity() {
     }
 
     private fun bindAlbumDetailEvents(albumId: String) {
-        val trackTiedToAlbumButton: Button = findViewById(R.id.btn_tie_track_to_album)
+        val trackTiedToAlbumButton: FloatingActionButton = findViewById(R.id.btn_tie_track_to_album)
         trackTiedToAlbumButton.setOnClickListener { view ->
             openTrackTiedToAlbumView(view, albumId)
         }
