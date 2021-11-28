@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class NetworkServiceAdapter {
    companion object {
-        private const val BASE_URL = "https://grupo-11-android.herokuapp.com/"
+        private const val BASE_URL = "http://grupo-11-android.herokuapp.com/"
 
         fun getRetrofitInstance(): Retrofit {
             return Retrofit.Builder().
@@ -172,6 +172,10 @@ class NetworkServiceAdapter {
         }
     }
 
+    fun createAlbum(album: Album): Call<Album> {
+        val service = getRetrofitInstance().create(ApiService::class.java)
+        val call = service.createAlbum("/albums", album.jsonPostString())
 
-
+        return call
+    }
 }

@@ -10,14 +10,24 @@ import com.example.vynilos.R
 import com.example.vynilos.databinding.ActivityCreateAlbumBinding
 import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
+import android.content.Intent
+import android.os.Handler
+import android.os.Looper
 
 import android.widget.DatePicker
+import com.example.vynilos.models.Album
+import com.example.vynilos.models.Collector
+import com.example.vynilos.models.Track
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.*
 
 
 class CreateAlbumActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCreateAlbumBinding
     private var datePickerDialog: DatePickerDialog? = null
+    private var selected_date: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +50,7 @@ class CreateAlbumActivity : AppCompatActivity() {
         binding.saveBtn.setOnClickListener {
             val is_valid = validateForm()
             if(is_valid) {
-
+                processForm()
             }
         }
     }
@@ -51,6 +61,7 @@ class CreateAlbumActivity : AppCompatActivity() {
         var month = cal[Calendar.MONTH]
         month = month + 1
         val day = cal[Calendar.DAY_OF_MONTH]
+        selected_date = "${year.toString()}-${month.toString()}-${day.toString()}"
         return makeDateString(day, month, year)
     }
 
@@ -60,7 +71,9 @@ class CreateAlbumActivity : AppCompatActivity() {
                 var month = month
                 month = month + 1
                 val date: String? = makeDateString(day, month, year)
+                selected_date = "${year.toString()}-${month.toString()}-${day.toString()}"
                 binding.datePickerButton.setText(date)
+
                 //????? here happens change
 
             }
@@ -179,6 +192,44 @@ class CreateAlbumActivity : AppCompatActivity() {
     private fun isInvalidCover():Boolean {
         val cover = binding.etCover.text
         return cover.isNullOrEmpty() || !android.util.Patterns.WEB_URL.matcher(cover).matches()
+    }
+
+    private fun processForm() {
+        val view= this
+        val name = binding.etName.text.toString()
+        val description = binding.etDescription.text.toString()
+        val cover = binding.etCover.text.toString()
+        val genre = binding.genreSpinner.getSelectedItem().toString()
+        val recordLabel = binding.recordLabelSpinner.getSelectedItem().toString()
+        val releaseDate = selected_date
+
+
+        val album = Album(
+            id = null,
+            name=name,
+            description = description,
+            cover = cover,
+            genre = genre,
+            recordLabel = recordLabel,
+            releaseDate = releaseDate,
+            tracks = emptyArray(),
+        )
+
+        val call = album.create()
+
+        call.enqueue(object : Callback<Album> {
+            override fun onFailure(call: Call<Album>, t: Throwable) {
+                //#Need to figureout how to handle error
+            }
+
+            override fun onResponse(call: Call<Album>, response: Response<Album>) {
+                view.finish()
+                val intent = Intent(view, AlbumsDetailActivity::class.java)
+                intent.putExtra("albumId", response.body()?.id?.toString())
+                view.startActivity(intent)
+            }
+        })
+
     }
 
 
