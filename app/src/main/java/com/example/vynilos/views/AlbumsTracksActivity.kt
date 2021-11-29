@@ -36,12 +36,14 @@ class AlbumsTracksActivity : AppCompatActivity() {
         val postButton: Button = findViewById(R.id.btn_create_tie_track_to_album)
 
         postButton.setOnClickListener {
-            val nameTxt : TextView = findViewById(R.id.txt_name)
-            val durationTxt : TextView = findViewById(R.id.txt_duration)
-            val name = nameTxt.text.toString()
-            val duration = durationTxt.text.toString()
-            createTrackToAlbum(name, duration, toNumberAlbumId)
-            this.finish()
+            if (validateForm()) {
+                val nameTxt: TextView = findViewById(R.id.txt_name)
+                val durationTxt: TextView = findViewById(R.id.txt_duration)
+                val name = nameTxt.text.toString()
+                val duration = durationTxt.text.toString()
+                createTrackToAlbum(name, duration, toNumberAlbumId)
+                this.finish()
+            }
         }
 
     }
@@ -54,6 +56,41 @@ class AlbumsTracksActivity : AppCompatActivity() {
         binding.toolbar.leftIcon.setOnClickListener { view ->
             this.finish()
         }
+    }
+
+    private fun validateForm(): Boolean {
+        var valid = true
+        var error_text = ""
+        binding.tvErrors.text = ""
+
+        if(isInvalidName()) {
+            valid = false
+            error_text = error_text + "Nombre del track requerido \n"
+        }
+
+        if(isInvalidDuration()) {
+            valid = false
+            error_text = error_text + "Nombre de la duracion requerido \n"
+        }
+
+        if(!valid) {
+            binding.tvErrors.text = error_text
+        }
+
+        return valid
+    }
+
+    private fun isInvalidName():Boolean {
+        val nameTxt : TextView = findViewById(R.id.txt_name)
+        val name = nameTxt.text.toString()
+        return name.isNullOrEmpty()
+    }
+
+    private fun isInvalidDuration():Boolean {
+
+        val durationTxt : TextView = findViewById(R.id.txt_duration)
+        val duration = durationTxt.text.toString()
+        return duration.isNullOrEmpty()
     }
 
 

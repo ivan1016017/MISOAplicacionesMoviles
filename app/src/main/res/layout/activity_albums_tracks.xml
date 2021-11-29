@@ -11,6 +11,16 @@
     <include layout="@layout/app_image" />
 
     <TextView
+        android:id="@+id/tvErrors"
+        android:layout_marginTop="140dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text=""
+        android:textColor="@color/red_error"
+        android:textSize="16dp" />
+
+    <TextView
         android:id="@+id/txt_name_title"
         android:textColor="@color/white"
         android:layout_marginTop="200dp"
