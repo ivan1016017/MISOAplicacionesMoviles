@@ -47,6 +47,7 @@ class AlbumsDetailActivity: AppCompatActivity() {
     private fun openTrackTiedToAlbumView(view: View, albumId:String) {
         val intent = Intent(this, AlbumsTracksActivity::class.java).apply {
         }
+        this.finish()
         intent.putExtra("albumId", albumId )
         startActivity(intent)
     }

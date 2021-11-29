@@ -1,5 +1,6 @@
 package com.example.vynilos.views
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,12 +9,18 @@ import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.example.vynilos.R
 import com.example.vynilos.databinding.ActivityAlbumsTracksBinding
+import com.example.vynilos.models.Track
 import com.example.vynilos.network.NetworkServiceAdapter
 import com.example.vynilos.viewmodels.AlbumDetailViewModel
 import com.example.vynilos.viewmodels.AlbumsActivityViewModel
 import com.example.vynilos.views.adapters.AlbumAdapter
 import com.google.android.material.textfield.TextInputEditText
 import org.json.JSONObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.util.*
+
 
 class AlbumsTracksActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAlbumsTracksBinding
@@ -42,7 +49,7 @@ class AlbumsTracksActivity : AppCompatActivity() {
                 val name = nameTxt.text.toString()
                 val duration = durationTxt.text.toString()
                 createTrackToAlbum(name, duration, toNumberAlbumId)
-                this.finish()
+//                this.finish()
             }
         }
 
@@ -70,7 +77,7 @@ class AlbumsTracksActivity : AppCompatActivity() {
 
         if(isInvalidDuration()) {
             valid = false
-            error_text = error_text + "Nombre de la duracion requerido \n"
+            error_text = error_text + "Duracion del track requerido \n"
         }
 
         if(!valid) {
@@ -96,7 +103,26 @@ class AlbumsTracksActivity : AppCompatActivity() {
 
 
     fun createTrackToAlbum(name: String, duration: String, id: Number){
-        serviceAdapter.createTrackToAlbum(name, duration, id)
+        val view = this
+        val albumId = intent.getStringExtra("albumId")
+        val call = serviceAdapter.createTrackToAlbum(name, duration, id)
+        call.enqueue(object : Callback<Track> {
+            override fun onFailure(call: Call<Track>, t: Throwable) {
+                //#Need to figureout how to handle error
+            }
+
+            override fun onResponse(call: Call<Track>, response: Response<Track>) {
+//                    Handler(Looper.getMainLooper()).post {
+//                        liveDataList.postValue(response.body())
+//                    }
+
+                view.finish()
+                val intent = Intent(view, AlbumsDetailActivity::class.java)
+                intent.putExtra("albumId", albumId)
+                view.startActivity(intent)
+
+            }
+        })
     }
 
 

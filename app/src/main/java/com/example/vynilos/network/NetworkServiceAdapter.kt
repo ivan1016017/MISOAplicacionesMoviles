@@ -149,27 +149,15 @@ class NetworkServiceAdapter {
         }
     }
 
-    fun createTrackToAlbum(name: String, duration: String, id: Number) {
-        CoroutineScope(Dispatchers.IO).launch {
+    fun createTrackToAlbum(name: String, duration: String, id: Number):Call<Track> {
+
             val service = getRetrofitInstance().create(ApiService::class.java)
             val track = Track(name = name, duration = duration)
 
             val call = service.createTrackToAlbum("/albums/$id/tracks",track)
 
-            call.enqueue(object : Callback<Track> {
-                override fun onFailure(call: Call<Track>, t: Throwable) {
-                    //#Need to figureout how to handle error
-                }
 
-                override fun onResponse(call: Call<Track>, response: Response<Track>) {
-//                    Handler(Looper.getMainLooper()).post {
-//                        liveDataList.postValue(response.body())
-//                    }
-                    val addedTrack = response.body()
-                    println(addedTrack)
-                }
-            })
-        }
+        return call
     }
 
     fun createAlbum(album: Album): Call<Album> {
