@@ -40,6 +40,8 @@ A continuación les dejamos un GIF ejecutando las pruebas
 
 [![Product Name Screen Shot][product-screenshot]](https://github.com/ivan1016017/MISOAplicacionesMoviles/blob/main/images/app.gif)
 
+Las pruebas E2E completas se pueden encontrar en el siguiente link [Pruebas E2E completas](https://youtu.be/3optr4qDPAk)
+
 ## Pruebas manuales de aceptación
 ### Sprint 1
 Video prueba manual de aceptación en dispositivo **HUAWEI Y7 - Android 7.0**: 
