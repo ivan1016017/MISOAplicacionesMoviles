@@ -68,11 +68,10 @@
 
     <Button
         android:id="@+id/btn_create_tie_track_to_album"
-
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="150dp"
         android:text="@string/tie_track" />
 
 

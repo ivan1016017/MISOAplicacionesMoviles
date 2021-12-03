@@ -42,6 +42,10 @@ class AlbumsDetailActivity: AppCompatActivity() {
         trackTiedToAlbumButton.setOnClickListener { view ->
             openTrackTiedToAlbumView(view, albumId)
         }
+
+        binding.tvAddSong.setOnClickListener { view ->
+            openTrackTiedToAlbumView(view, albumId)
+        }
     }
 
     private fun openTrackTiedToAlbumView(view: View, albumId:String) {

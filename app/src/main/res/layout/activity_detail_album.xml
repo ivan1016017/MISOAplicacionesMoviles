@@ -78,7 +78,7 @@
             tools:text="2012" />
 
         <TextView
-            android:id="@+id/descriptionText2342345"
+            android:id="@+id/tvAddSong"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
