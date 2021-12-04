@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Soda Estereo"
-            android:textColor="@color/primary_color"
+            android:textColor="@color/grey_contrast"
             android:textSize="18sp"
             android:textStyle="bold"
             />
@@ -43,8 +43,7 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:layout_marginTop="6dp"
-
-            android:textColor="@color/secondary_color"
+            android:textColor="@color/white"
             tools:text="Luego de definir los modelos de datos, es necesario conectar las fuentes de datos del componente encargado de la red con la interfaz gráfica. Para esto, desde Android Studio cree un directorio viewmodels en el código fuente de la aplicación, haga clic derecho en él y con la opción New > Kotlin File/Class agregue un archivo para cada una de las entidades para las cuales creó un modelo, es decir, un ViewModel para los álbumes, otro para los coleccionistas y otro para los comentarios.
 " />
 

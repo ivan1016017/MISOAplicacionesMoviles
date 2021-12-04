@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Buscando America"
-            android:textColor="@color/primary_color"
+            android:textColor="@color/grey_contrast"
             android:textSize="18sp"
             android:textStyle="bold"
             />
@@ -43,8 +43,7 @@
             android:ellipsize="end"
             android:maxLines="2"
             android:layout_marginTop="6dp"
-
-            android:textColor="@color/secondary_color"
+            android:textColor="@color/primary_color"
             tools:text="Luego de definir los modelos de datos, es necesario conectar las fuentes de datos del componente encargado de la red con la interfaz gráfica. Para esto, desde Android Studio cree un directorio viewmodels en el código fuente de la aplicación, haga clic derecho en él y con la opción New > Kotlin File/Class agregue un archivo para cada una de las entidades para las cuales creó un modelo, es decir, un ViewModel para los álbumes, otro para los coleccionistas y otro para los comentarios.
 " />
         <LinearLayout
@@ -55,7 +54,7 @@
                 android:id="@+id/tvGenre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/secondary_purple"
+                android:textColor="@color/grey_contrast"
                 android:layout_marginTop="4dp"
                 tools:text="Salsa"
                 />
@@ -67,7 +66,7 @@
                     android:id="@+id/tvRecordLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/secondary_purple"
+                    android:textColor="@color/grey_contrast"
                     tools:text="Elektra"
                     android:layout_gravity="end"
                     android:layout_marginTop="4dp"

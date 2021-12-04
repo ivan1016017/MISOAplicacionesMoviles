@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:text="@string/welcome_heading"
-        android:textColor="#5E5C5C"
+        android:textColor="@color/grey_contrast"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="71dp"
         tools:layout_editor_absoluteY="72dp" />
@@ -79,7 +79,7 @@
                 android:layout_marginRight="25dp"
                 android:text="@string/collector_menu_text" />
             <Button
-                android:id="@+id/button9"
+                android:id="@+id/btn_create_album"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center"

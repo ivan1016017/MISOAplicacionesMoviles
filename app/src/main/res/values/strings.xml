@@ -15,8 +15,42 @@
     <string name="birthday">Fecha creacion de la banda</string>
     <string name="collector_subtitle">Coleccionista destacado</string>
     <string name="description_label">Descripción</string>
+    <string name="tie_track_to_album">Asociar cancion al album</string>
+    <string name="tie_track">Asociar cancion</string>
+    <string name="track_name_hint">Nombre de la cancion</string>
+    <string name="track_duration_hint">Duracion de la cancion</string>
+    <string name="track_id">Id para la cancion</string>
+    <string name="tracks">Tracks:</string>
+    <string name="add_song_to_album_title">Agregar cancion</string>
     <string name="todo_collector_detail">
       TODO: Comments List
     </string>
+    <string name="add_song">ADDSONG</string>
+    <string name="create_album">Crear álbum</string>
+    <string name="create_album_title">Llenar el formulario</string>
+    <string name="create_album_subtitle">Todos los campos son requeridos</string>
+    <string name="nombre_del_lbum">Nombre del álbum</string>
+    <string name="cover_url">Imágen del cover URL</string>
+    <string name="genre">Genre</string>
+    <string name="record_label">Record label</string>
+    <string name="release_date">Release Date</string>
+    <string name="descripcion">Descripción</string>
+    <string name="guardar">Guardar</string>
+    <string-array name="genre_array">
+        <item>Classical</item>
+        <item>Salsa</item>
+        <item>Rock</item>
+        <item>Folk</item>
+    </string-array>
+
+    <string-array name="record_label_array">
+        <item>Sony Music</item>
+        <item>EMI</item>
+        <item>Discos Fuentes</item>
+        <item>Elektra</item>
+        <item>Fania Records</item>
+    </string-array>
+    <string name="nombre_del_album">nombre del album</string>
+
 </resources>
 

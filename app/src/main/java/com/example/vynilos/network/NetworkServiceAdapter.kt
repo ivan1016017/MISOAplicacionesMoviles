@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.vynilos.models.Album
 import com.example.vynilos.models.Artist
 import com.example.vynilos.models.Collector
+import com.example.vynilos.models.Track
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -40,6 +41,7 @@ class NetworkServiceAdapter {
                 }
                 override fun onResponse(call: Call<List<Album>>, response: Response<List<Album>>) {
                     //Return to main thread that draws the UI
+
                     Handler(Looper.getMainLooper()).post {
                         liveDataList.postValue(response.body())
                     }
@@ -145,5 +147,23 @@ class NetworkServiceAdapter {
                 }
             })
         }
+    }
+
+    fun createTrackToAlbum(name: String, duration: String, id: Number):Call<Track> {
+
+            val service = getRetrofitInstance().create(ApiService::class.java)
+            val track = Track(name = name, duration = duration)
+
+            val call = service.createTrackToAlbum("/albums/$id/tracks",track)
+
+
+        return call
+    }
+
+    fun createAlbum(album: Album): Call<Album> {
+        val service = getRetrofitInstance().create(ApiService::class.java)
+        val call = service.createAlbum("/albums", album.jsonPostString())
+
+        return call
     }
 }
