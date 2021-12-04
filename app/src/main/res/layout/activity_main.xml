@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:text="@string/welcome_heading"
-        android:textColor="#5E5C5C"
+        android:textColor="@color/grey_contrast"
         android:textSize="18sp"
         tools:layout_editor_absoluteX="71dp"
         tools:layout_editor_absoluteY="72dp" />

@@ -32,8 +32,8 @@
 
     <EditText
         android:id="@+id/txt_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="394dp"
+        android:layout_height="56dp"
         android:layout_marginTop="230dp"
         android:ems="10"
         android:layout_marginRight="10dp"
@@ -41,6 +41,7 @@
         android:gravity="start|top"
         android:textColor="@color/white"
         app:backgroundTint="@color/secondary_purple"
+        android:hint="ingrese el nombre de la cancion"
         android:inputType="textMultiLine" />
 
     <TextView
@@ -55,13 +56,14 @@
 
     <EditText
         android:id="@+id/txt_duration"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="394dp"
+        android:layout_height="56dp"
         android:layout_marginTop="340dp"
         android:ems="10"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:gravity="start|top"
+        android:hint="ingrese duracion de la cancion"
         android:textColor="@color/white"
         app:backgroundTint="@color/secondary_purple"
         android:inputType="textMultiLine" />

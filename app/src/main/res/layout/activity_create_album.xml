@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:text="@string/create_album_subtitle"
-                android:textColor="@color/grey"
+                android:textColor="@color/grey_contrast"
                 android:textSize="18sp"
                 tools:layout_editor_absoluteX="71dp"
                 tools:layout_editor_absoluteY="72dp" />
@@ -61,18 +61,19 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:text="@string/nombre_del_lbum" />
+
             <EditText
                 android:id="@+id/etName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:layout_marginRight="10dp"
+                android:layout_width="394dp"
+                android:layout_height="56dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:hint="@string/nombre_del_album"
+                android:ems="10"
                 android:inputType="textPersonName"
                 android:textColor="@color/white"
-                app:backgroundTint="@color/secondary_purple"
-                android:layout_marginBottom="20dp"
-                />
+                app:backgroundTint="@color/secondary_purple" />
 
 
             <TextView
@@ -86,10 +87,11 @@
 
             <EditText
                 android:id="@+id/etCover"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="394dp"
+                android:layout_height="56dp"
                 android:ems="10"
                 android:layout_marginRight="10dp"
+                android:hint="url de la imagen"
                 android:layout_marginLeft="10dp"
                 android:inputType="textPersonName"
                 android:textColor="@color/white"
@@ -108,12 +110,12 @@
 
             <Spinner
                 android:id="@+id/genre_spinner"
-                android:layout_width="match_parent"
+                android:layout_width="394dp"
+                android:layout_height="56dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/secondary_purple"
-                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 />
 
@@ -128,12 +130,12 @@
 
             <Spinner
                 android:id="@+id/record_label_spinner"
-                android:layout_width="match_parent"
+                android:layout_width="394dp"
+                android:layout_height="56dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/secondary_purple"
-                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 />
 
@@ -149,8 +151,8 @@
             <Button
                 android:id="@+id/datePickerButton"
                 style="?android:spinnerStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="394dp"
+                android:layout_height="56dp"
                 android:gravity="center"
                 android:text="JAN 01 2020"
                 android:layout_marginRight="10dp"
@@ -169,8 +171,9 @@
 
             <EditText
                 android:id="@+id/etDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="394dp"
+                android:layout_height="56dp"
+                android:hint="Agrege una descripcion"
                 android:ems="10"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
