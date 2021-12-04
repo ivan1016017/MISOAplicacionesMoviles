@@ -149,21 +149,18 @@ class NetworkServiceAdapter {
         }
     }
 
-    fun createTrackToAlbum(name: String, duration: String, id: Number):Call<Track> {
+    fun createTrackToAlbum(name: String, duration: String, id: Number): Call<Track> {
 
-            val service = getRetrofitInstance().create(ApiService::class.java)
-            val track = Track(name = name, duration = duration)
-
-            val call = service.createTrackToAlbum("/albums/$id/tracks",track)
+        val service = getRetrofitInstance().create(ApiService::class.java)
+        val track = Track(name = name, duration = duration)
 
 
-        return call
+        return service.createTrackToAlbum("/albums/$id/tracks", track)
     }
 
     fun createAlbum(album: Album): Call<Album> {
         val service = getRetrofitInstance().create(ApiService::class.java)
-        val call = service.createAlbum("/albums", album.jsonPostString())
 
-        return call
+        return service.createAlbum("/albums", album.jsonPostString())
     }
 }

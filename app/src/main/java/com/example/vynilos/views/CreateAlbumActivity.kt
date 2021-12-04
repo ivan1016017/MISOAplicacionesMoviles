@@ -1,23 +1,16 @@
 package com.example.vynilos.views
 
 import android.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.ImageView
-import android.widget.Spinner
-import com.example.vynilos.R
-import com.example.vynilos.databinding.ActivityCreateAlbumBinding
 import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
 import android.content.Intent
-import android.os.Handler
-import android.os.Looper
-
-import android.widget.DatePicker
+import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import androidx.appcompat.app.AppCompatActivity
+import com.example.vynilos.R
+import com.example.vynilos.databinding.ActivityCreateAlbumBinding
 import com.example.vynilos.models.Album
-import com.example.vynilos.models.Collector
-import com.example.vynilos.models.Track
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,7 +32,7 @@ class CreateAlbumActivity : AppCompatActivity() {
 
         setDatePicker()
         initDatePicker()
-        binding.datePickerButton.setText(getTodaysDate());
+        binding.datePickerButton.text = getTodaysDate()
 
         setToolbarText()
         handleBackClick()
@@ -61,7 +54,7 @@ class CreateAlbumActivity : AppCompatActivity() {
         var month = cal[Calendar.MONTH]
         month = month + 1
         val day = cal[Calendar.DAY_OF_MONTH]
-        selected_date = "${year.toString()}-${month.toString()}-${day.toString()}"
+        selected_date = "$year-$month-$day"
         return makeDateString(day, month, year)
     }
 
@@ -71,8 +64,8 @@ class CreateAlbumActivity : AppCompatActivity() {
                 var month = month
                 month = month + 1
                 val date: String? = makeDateString(day, month, year)
-                selected_date = "${year.toString()}-${month.toString()}-${day.toString()}"
-                binding.datePickerButton.setText(date)
+                selected_date = "$year-$month-$day"
+                binding.datePickerButton.text = date
 
                 //????? here happens change
 
@@ -90,7 +83,7 @@ class CreateAlbumActivity : AppCompatActivity() {
 
     private fun setDatePicker() {
         binding.datePickerButton.setOnClickListener {
-            datePickerDialog?.show();
+            datePickerDialog?.show()
         }
     }
 
@@ -135,11 +128,11 @@ class CreateAlbumActivity : AppCompatActivity() {
         }
     }
 
-    private fun makeDateString(day: Int, month: Int, year: Int): String? {
+    private fun makeDateString(day: Int, month: Int, year: Int): String {
         return getMonthFormat(month).toString() + " " + day + " " + year
     }
 
-    private fun getMonthFormat(month: Int): String? {
+    private fun getMonthFormat(month: Int): String {
         if (month == 1) return "ENE"
         if (month == 2) return "FEB"
         if (month == 3) return "MAR"
@@ -199,8 +192,8 @@ class CreateAlbumActivity : AppCompatActivity() {
         val name = binding.etName.text.toString()
         val description = binding.etDescription.text.toString()
         val cover = binding.etCover.text.toString()
-        val genre = binding.genreSpinner.getSelectedItem().toString()
-        val recordLabel = binding.recordLabelSpinner.getSelectedItem().toString()
+        val genre = binding.genreSpinner.selectedItem.toString()
+        val recordLabel = binding.recordLabelSpinner.selectedItem.toString()
         val releaseDate = selected_date
 
 

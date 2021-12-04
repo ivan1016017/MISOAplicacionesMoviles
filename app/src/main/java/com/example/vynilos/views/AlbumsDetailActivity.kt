@@ -3,16 +3,12 @@ package com.example.vynilos.views
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.vynilos.R
 import com.example.vynilos.databinding.ActivityDetailAlbumBinding
-import com.example.vynilos.databinding.ItemTrackBinding
-import com.example.vynilos.models.Track
 import com.example.vynilos.viewmodels.AlbumDetailViewModel
-import com.example.vynilos.views.adapters.AlbumAdapter
 import com.example.vynilos.views.adapters.TrackAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.squareup.picasso.Picasso

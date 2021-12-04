@@ -1,16 +1,10 @@
 package com.example.vynilos.models
 
-import android.content.pm.SigningInfo
 import java.text.SimpleDateFormat
-import com.example.vynilos.models.Track
 import com.example.vynilos.repositories.AlbumRepository
 import com.google.gson.JsonObject
 import com.google.gson.annotations.SerializedName
 import retrofit2.Call
-import org.json.JSONObject
-
-
-
 
 data class Album (
     val id:Number?,
