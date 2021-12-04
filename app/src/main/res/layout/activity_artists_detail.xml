@@ -5,21 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.ArtistDetailActivity"
-    android:background="@color/black"
+    android:background="@color/background"
     >
+
     <RelativeLayout
+        android:id="@+id/principal"
         android:layout_width="408dp"
         android:layout_height="259dp"
-        android:background="@color/blue_artist"
+        android:background="@color/black"
         android:orientation="vertical"
-        android:id="@+id/principal"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
         <Space
             android:id="@+id/spacer"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="50dp" />
 
         <include
             android:id="@+id/toolbar"
@@ -33,7 +34,7 @@
             android:layout_centerHorizontal="true"
             android:textColor="@color/white"
             android:textSize="21sp"
-            tools:text="Freddy Mercury"/>
+            tools:text="Freddy Mercury" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ivCover"
@@ -66,7 +67,7 @@
             android:layout_marginStart="15dp"
             android:textColor="@color/white"
             android:textSize="21sp"
-            tools:text="15 de enero de 1994"/>
+            tools:text="15 de enero de 1994" />
     </RelativeLayout>
 
     <RelativeLayout
