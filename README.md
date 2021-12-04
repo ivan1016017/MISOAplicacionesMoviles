@@ -26,12 +26,15 @@ La documentación completa del proyecto se encuentra en la [Wiki](https://github
 En la raiz del proyecto se encuentra el archivo ```vinilos_sprint_1.apk```, el cual debe ser instalado en cualquier dispositivo con versión Android  Lollipop 5.0 o superior.
 ### Sprint 2
 En la raiz del proyecto se encuentra el archivo ```vinilos_sprint_2.apk```, el cual debe ser instalado en cualquier dispositivo con versión Android  Lollipop 5.0 o superior
+### Sprint 3
+En la raiz del proyecto se encuentra el archivo ```vinilos_sprint_3.apk```, el cual debe ser instalado en cualquier dispositivo con versión Android  Lollipop 5.0 o superior
+
 
 <!-- ABOUT THE PROJECT -->
 ## Pruebas automatizadas Espresso
 **Importante:** Antes de ejecutar las pruebas se recomienda visitar el endpoint [https://grupo-11-android.herokuapp.com/](https://grupo-11-android.herokuapp.com/), de esta forma nos aseguramos que el aplicativo no espere a que Heroku inicie el serivico.
 
-### Sprint 1 y 2
+### Sprint 1, 2 y 3
 Se recomienda ejecutar las pruebas en un emulador PIXEL XL con API 22
 
 Para ejecutar las 4 pruebas Espresso E2E ir a la carpeta app > java, dar click derecho en el paquete ```com.examples.vynilos(androidTest)``` y seleccionar ```Run Tests in ``` 
@@ -57,6 +60,12 @@ Video prueba manual de aceptación en dispositivo **HUAWEI Y7 - Android 7.0**:
 Video prueba manual de aceptación en dispositivo **Xiaomi REDMI 9 - Android 10.0**: 
 [https://youtu.be/Vl0WGG4rvCs](https://youtu.be/Vl0WGG4rvCs) 
 
+### Sprint 3
+Video prueba manual de aceptación en dispositivo **HUAWEI Y7 - Android 7.0**: 
+[https://youtu.be/Zhk6lEtf2No](https://youtu.be/Zhk6lEtf2No) 
+
+Video prueba manual de aceptación en dispositivo **Xiaomi REDMI 9 - Android 10.0**: 
+[https://youtu.be/Tq_YlXlMSCg](https://youtu.be/Tq_YlXlMSCg) 
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
