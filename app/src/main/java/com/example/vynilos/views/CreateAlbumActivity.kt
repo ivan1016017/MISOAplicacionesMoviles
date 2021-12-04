@@ -39,7 +39,7 @@ class CreateAlbumActivity : AppCompatActivity() {
 
         setDatePicker()
         initDatePicker()
-        binding.datePickerButton.setText(getTodaysDate());
+        binding.datePickerButton.text = getTodaysDate()
 
         setToolbarText()
         handleBackClick()
@@ -61,7 +61,7 @@ class CreateAlbumActivity : AppCompatActivity() {
         var month = cal[Calendar.MONTH]
         month = month + 1
         val day = cal[Calendar.DAY_OF_MONTH]
-        selected_date = "${year.toString()}-${month.toString()}-${day.toString()}"
+        selected_date = "$year-$month-$day"
         return makeDateString(day, month, year)
     }
 
@@ -71,8 +71,8 @@ class CreateAlbumActivity : AppCompatActivity() {
                 var month = month
                 month = month + 1
                 val date: String? = makeDateString(day, month, year)
-                selected_date = "${year.toString()}-${month.toString()}-${day.toString()}"
-                binding.datePickerButton.setText(date)
+                selected_date = "$year-$month-$day"
+                binding.datePickerButton.text = date
 
                 //????? here happens change
 
@@ -90,7 +90,7 @@ class CreateAlbumActivity : AppCompatActivity() {
 
     private fun setDatePicker() {
         binding.datePickerButton.setOnClickListener {
-            datePickerDialog?.show();
+            datePickerDialog?.show()
         }
     }
 
@@ -199,8 +199,8 @@ class CreateAlbumActivity : AppCompatActivity() {
         val name = binding.etName.text.toString()
         val description = binding.etDescription.text.toString()
         val cover = binding.etCover.text.toString()
-        val genre = binding.genreSpinner.getSelectedItem().toString()
-        val recordLabel = binding.recordLabelSpinner.getSelectedItem().toString()
+        val genre = binding.genreSpinner.selectedItem.toString()
+        val recordLabel = binding.recordLabelSpinner.selectedItem.toString()
         val releaseDate = selected_date
 
 

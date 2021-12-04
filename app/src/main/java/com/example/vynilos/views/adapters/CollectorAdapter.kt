@@ -10,7 +10,6 @@ import com.example.vynilos.R
 import com.example.vynilos.databinding.ItemCollectorBinding
 import com.example.vynilos.models.Collector
 import com.example.vynilos.views.CollectorDetailActivity
-import com.squareup.picasso.Picasso
 
 class CollectorAdapter : RecyclerView.Adapter<CollectorAdapter.CollectorHolder>(){
     private var collectors : List<Collector>? = null
