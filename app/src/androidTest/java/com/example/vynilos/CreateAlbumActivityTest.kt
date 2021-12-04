@@ -1,83 +1,164 @@
 package com.example.vynilos
 
+
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RelativeLayout
-import androidx.recyclerview.widget.RecyclerView
-import androidx.test.espresso.Espresso
-import androidx.test.espresso.action.ViewActions
-import androidx.test.espresso.action.ViewActions.closeSoftKeyboard
-import androidx.test.espresso.assertion.ViewAssertions
-import androidx.test.espresso.contrib.RecyclerViewActions
-import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.*
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.filters.LargeTest
 import androidx.test.ext.junit.rules.ActivityScenarioRule
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.hamcrest.Description
 import org.hamcrest.Matcher
-import org.hamcrest.Matchers
+import org.hamcrest.Matchers.`is`
+import org.hamcrest.Matchers.allOf
 import org.hamcrest.TypeSafeMatcher
-import org.hamcrest.core.IsInstanceOf
 import org.junit.Rule
 import org.junit.Test
+import org.junit.runner.RunWith
 
+@LargeTest
+@RunWith(AndroidJUnit4::class)
 class CreateAlbumActivityTest {
 
     @Rule
     @JvmField
     var mActivityTestRule = ActivityScenarioRule(MainActivity::class.java)
 
-
     @Test
-    fun albumDetailActivityTest1() {
-        val materialButton = Espresso.onView(
-            Matchers.allOf(
-                ViewMatchers.withId(R.id.btn_create_album),
-                ViewMatchers.withText("Crear album"),
+    fun createAlbumActivityTest() {
+        val materialButton = onView(
+            allOf(
+                withId(R.id.btn_create_album), withText("Crear album"),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("android.widget.ScrollView")),
+                        0
+                    ),
+                    4
+                )
             )
         )
-        materialButton.perform(ViewActions.scrollTo(), ViewActions.click())
-        Thread.sleep(1000)
+        materialButton.perform(scrollTo(), click())
 
-
-        val appCompatAlbumViewTextName = Espresso.onView(
-            Matchers.allOf(
-                ViewMatchers.withId(R.id.etName),
-                ViewMatchers.isDisplayed()
+        val textView = onView(
+            allOf(
+                withId(R.id.toolbar_text), withText("Crear álbum"),
+                withParent(withParent(withId(R.id.toolbar))),
+                isDisplayed()
             )
         )
-        appCompatAlbumViewTextName.perform(ViewActions.typeText("Nuevo album miso"), closeSoftKeyboard())
-        Thread.sleep(1000)
+        textView.check(matches(withText("Crear álbum")))
 
-        val appCompatAlbumViewTextUrl = Espresso.onView(
-            Matchers.allOf(
-                ViewMatchers.withId(R.id.etCover),
-                ViewMatchers.isDisplayed()
+        val appCompatEditText = onView(
+            allOf(
+                withId(R.id.etName),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("android.widget.ScrollView")),
+                        0
+                    ),
+                    4
+                )
             )
         )
-        appCompatAlbumViewTextUrl.perform(ViewActions.typeText("https://i.ytimg.com/vi/d4IoXr_TOGs/maxresdefault.jpg"), closeSoftKeyboard())
-        Thread.sleep(1000)
+        appCompatEditText.perform(scrollTo(), click())
 
-        val appCompatCreateAlbumViewTextDescription = Espresso.onView(
-            Matchers.allOf(
-                ViewMatchers.withId(R.id.etDescription),
-                ViewMatchers.isDisplayed()
+        val appCompatEditText2 = onView(
+            allOf(
+                withId(R.id.etName),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("android.widget.ScrollView")),
+                        0
+                    ),
+                    4
+                )
             )
         )
-        appCompatCreateAlbumViewTextDescription.perform(ViewActions.typeText("Me siento orgulloso de pertenecer a miso"), closeSoftKeyboard())
-        Thread.sleep(3000)
+        appCompatEditText2.perform(scrollTo(), replaceText("test nombre"), closeSoftKeyboard())
 
-        val appCompatCreateAlbumViewButton = Espresso.onView(
-            Matchers.allOf(
-                ViewMatchers.withId(R.id.saveBtn),
-                ViewMatchers.isDisplayed()
+        val appCompatEditText3 = onView(
+            allOf(
+                withId(R.id.etCover),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("android.widget.ScrollView")),
+                        0
+                    ),
+                    6
+                )
             )
         )
-        appCompatCreateAlbumViewButton.perform(ViewActions.click())
-        Thread.sleep(1000)
+        appCompatEditText3.perform(
+            scrollTo(),
+            replaceText("https://abc.image.imga.png"),
+            closeSoftKeyboard()
+        )
 
+        val appCompatEditText4 = onView(
+            allOf(
+                withId(R.id.etCover), withText("https://abc.image.imga.png"),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("android.widget.ScrollView")),
+                        0
+                    ),
+                    6
+                )
+            )
+        )
+        appCompatEditText4.perform(scrollTo(), click())
+
+        val appCompatEditText5 = onView(
+            allOf(
+                withId(R.id.etCover), withText("https://abc.image.imga.png"),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("android.widget.ScrollView")),
+                        0
+                    ),
+                    6
+                )
+            )
+        )
+        appCompatEditText5.perform(scrollTo(), replaceText("https://abc.image.com/imga.png"))
+
+        val appCompatEditText6 = onView(
+            allOf(
+                withId(R.id.etCover), withText("https://abc.image.com/imga.png"),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("android.widget.ScrollView")),
+                        0
+                    ),
+                    6
+                ),
+                isDisplayed()
+            )
+        )
+        appCompatEditText6.perform(closeSoftKeyboard())
+
+        val appCompatEditText7 = onView(
+            allOf(
+                withId(R.id.etDescription),
+                childAtPosition(
+                    childAtPosition(
+                        withClassName(`is`("android.widget.ScrollView")),
+                        0
+                    ),
+                    14
+                )
+            )
+        )
+        appCompatEditText7.perform(
+            scrollTo(),
+            replaceText("Test descripcioin"),
+            closeSoftKeyboard()
+        )
     }
-
-
-
 
     private fun childAtPosition(
         parentMatcher: Matcher<View>, position: Int
